@@ -7,8 +7,8 @@
         <!-- 侧边栏 -->
         <el-row class="tac">
           <el-col :span="25">
-            <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" theme="dark" :router=true  >
-
+            <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" theme="dark" :router=true>
+  
               <el-submenu index="1">
                 <template slot="title">学员端管理</template>
                 <el-submenu index="1-4">
@@ -21,7 +21,7 @@
                   <el-menu-item index="student_topic">题库管理</el-menu-item>
                 </el-submenu>
               </el-submenu>
-
+  
               <el-submenu index="2">
                 <template slot="title">教练端管理</template>
                 <el-submenu index="2-4">
@@ -30,42 +30,42 @@
                   <el-menu-item index="2-4-2">设置教练级别</el-menu-item>
                 </el-submenu>
               </el-submenu>
-
-               <el-menu-item index="3">订单管理</el-menu-item>
+  
+              <el-menu-item index="3">订单管理</el-menu-item>
               <el-menu-item index="4">佣金设置</el-menu-item>
-
+  
               <el-submenu index="5">
                 <template slot="title">广告资讯管理</template>
-                  <el-menu-item index="5-4-1">首页banner</el-menu-item>
-                  <el-menu-item index="5-4-2">学车指南</el-menu-item>
+                <el-menu-item index="5-4-1">首页banner</el-menu-item>
+                <el-menu-item index="5-4-2">学车指南</el-menu-item>
               </el-submenu>
-
+  
               <el-submenu index="6">
                 <template slot="title">客服管理</template>
-                  <el-menu-item index="6-4-1">常见问题</el-menu-item>
-                  <el-menu-item index="6-4-2">在线反馈</el-menu-item>
+                <el-menu-item index="6-4-1">常见问题</el-menu-item>
+                <el-menu-item index="6-4-2">在线反馈</el-menu-item>
               </el-submenu>
-
+  
               <el-submenu index="7">
                 <template slot="title">财务管理</template>
-                  <el-menu-item index="7-4-1">教练申请提现</el-menu-item>
-                  <el-menu-item index="7-4-2">教练返佣统计</el-menu-item>
-                  <el-menu-item index="7-4-3">教练返佣明细</el-menu-item>
-                  <el-menu-item index="7-4-4">学员申请提现</el-menu-item>
-                  <el-menu-item index="7-4-5">代理返佣统计</el-menu-item>
-                  <el-menu-item index="7-4-6">代理返佣明细</el-menu-item>
+                <el-menu-item index="7-4-1">教练申请提现</el-menu-item>
+                <el-menu-item index="7-4-2">教练返佣统计</el-menu-item>
+                <el-menu-item index="7-4-3">教练返佣明细</el-menu-item>
+                <el-menu-item index="7-4-4">学员申请提现</el-menu-item>
+                <el-menu-item index="7-4-5">代理返佣统计</el-menu-item>
+                <el-menu-item index="7-4-6">代理返佣明细</el-menu-item>
               </el-submenu>
-
+  
               <el-submenu index="8">
                 <template slot="title">系统设置</template>
-                  <el-menu-item index="8-4-1">系统消息列表</el-menu-item>
-                  <el-menu-item index="8-4-2">发送新消息</el-menu-item>
-                  <el-menu-item index="8-4-3">用户管理</el-menu-item>
-                  <el-menu-item index="8-4-4">新增用户</el-menu-item>
-                  <el-menu-item index="8-4-5">个人中心</el-menu-item>
-                  <el-menu-item index="8-4-6">密码重置</el-menu-item>
+                <el-menu-item index="8-4-1">系统消息列表</el-menu-item>
+                <el-menu-item index="8-4-2">发送新消息</el-menu-item>
+                <el-menu-item index="8-4-3">用户管理</el-menu-item>
+                <el-menu-item index="8-4-4">新增用户</el-menu-item>
+                <el-menu-item index="8-4-5">个人中心</el-menu-item>
+                <el-menu-item index="8-4-6">密码重置</el-menu-item>
               </el-submenu>
-
+  
             </el-menu>
           </el-col>
         </el-row>
@@ -132,51 +132,76 @@ export default {
 
 <style>
 /* 页面初始化 */
+
 body {
   margin: 0;
 }
+
 #app {
   min-width: 1200px;
   margin: 0 auto;
   font-size: 10px;
   font-family: "Helvetica Neue", "PingFang SC", Arial, sans-serif;
 }
+
+
 /* 侧边栏 */
+
 .el-tree-node__content {
   line-height: 24px !important;
   height: 24px !important;
   cursor: pointer;
 }
+
 main .main-right {
   padding: 20px !important;
 }
+
 main .main-left {
-  background-color: #324057 !important; 
+  background-color: #324057 !important;
 }
-.el-row{
+
+.el-row {
   margin-top: 20px;
 }
-.el-menu-item, .el-submenu__title{
-      height: 30px !important;
-    line-height: 30px !important;
+
+.el-menu-item,
+.el-submenu__title {
+  height: 30px !important;
+  line-height: 30px !important;
+}
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: #bee1eb;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #00aff0;
 }
 
-
 /* 主内容区 */
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: 800px;
+  /* min-height: 100%; */
   border: solid 0px #E9ECF1;
   background-color: #FCFCFC;
 }
+
 main .main-left {
   text-align: center;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 200px;
   flex: 0 0 200px;
+  height: 680px;
+  overflow-y: scroll;
 }
+
+
 main .main-right {
   -webkit-box-flex: 1;
   -ms-flex: 1;
@@ -184,12 +209,12 @@ main .main-right {
   background-color: #fff;
   padding: 50px 70px;
 }
-main .el-menu { 
-  background-color: none ;
+
+main .el-menu {
+  background-color: none;
 }
-.el-menu--dark{
+
+.el-menu--dark {
   text-align: left;
 }
-
-
 </style>

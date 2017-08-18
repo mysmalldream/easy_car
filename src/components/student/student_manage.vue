@@ -1,6 +1,6 @@
 <template>
   <div id="hello">
-    审核管理111
+    <!-- 审核管理111 -->
     <el-row>
       <el-col :span="7">
         <div class="grid-content bg-purple">
@@ -19,6 +19,26 @@
             </el-date-picker>
           </div>
         </div>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="4">
+        <div class="grid-content bg-purple">1</div>
+      </el-col>
+      <el-col :span="4">
+        <div class="grid-content bg-purple-light">2</div>
+      </el-col>
+      <el-col :span="4">
+        <div class="grid-content bg-purple">3</div>
+      </el-col>
+      <el-col :span="4">
+        <div class="grid-content bg-purple-light">4</div>
+      </el-col>
+      <el-col :span="4">
+        <div class="grid-content bg-purple">5</div>
+      </el-col>
+      <el-col :span="4">
+        <div class="grid-content bg-purple-light">6</div>
       </el-col>
     </el-row>
   </div>
@@ -101,11 +121,15 @@ export default {
   padding: 10px 0;
   background-color: #f9fafc;
 }
+
+
 /* 自定义的样式 */
+
 .bg-purple[data-v-161e35eb] {
-    background: none;
+  background: none;
 }
+
 .bg-purple-light[data-v-161e35eb] {
-    background: none;
+  background: none;
 }
 </style>
