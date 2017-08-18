@@ -154,7 +154,7 @@ body {
 }
 
 main .main-right {
-  padding: 20px !important;
+  padding: 0px !important;
 }
 
 main .main-left {

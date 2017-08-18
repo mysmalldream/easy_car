@@ -28,12 +28,12 @@ const router = new VueRouter({
   routes:[
     { path: "/", redirect: '/login' }, //默认显示登录界面
     { path: "/login", component:login }, //登录界面
-    { path: "/student/student_manage", component:student_manage }, //审核管理
-    { path: "/student/student_coupons", component:student_coupons }, //学员卡券明细
-    { path: "/student/student_course", component:student_course }, //课程报名管理
-    { path: "/student/student_test", component:student_test }, //约考记录
-    { path: "/student/student_issue", component:student_issue }, //考试发布
-    { path: "/student/student_topic", component:student_topic }, //题库管理
+    { path: "/student_manage", component:student_manage }, //审核管理
+    { path: "/student_coupons", component:student_coupons }, //学员卡券明细
+    { path: "/student_course", component:student_course }, //课程报名管理
+    { path: "/student_test", component:student_test }, //约考记录
+    { path: "/student_issue", component:student_issue }, //考试发布
+    { path: "/student_topic", component:student_topic }, //题库管理
   ]
 })
 
