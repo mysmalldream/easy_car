@@ -1,6 +1,6 @@
 <template>
   <div id="hello">
-    
+    <!-- 学员信息概览 -->
     <!-- 查询 -->
     <div class="query">
       <form action="">
@@ -8,7 +8,7 @@
           <div class="grid-content bg-purple">
             <div class="block">
               <span class="demonstration">注册日期:</span>
-              <el-date-picker v-model="value6" type="daterange" placeholder="请选择申请日期范围">
+              <el-date-picker v-model="value6" type="daterange" placeholder="请选择注册日期范围">
               </el-date-picker>
             </div>
           </div>
@@ -26,7 +26,7 @@
         <el-col :span="6">
           <div class="grid-content bg-purple">
             <label>姓名:
-              <el-input size="small2" placeholder="请输入您的账号" v-model="input1">
+              <el-input size="small2" placeholder="请输入您的姓名" v-model="input1">
               </el-input>
             </label>
           </div>
@@ -34,7 +34,7 @@
 
         <el-col :span="6">
           <div class="grid-content bg-purple">
-            <el-button :plain="true" type="success">查询</el-button>
+            <el-button  type="primary">查询</el-button>
           </div>
         </el-col>
 
@@ -127,6 +127,9 @@ export default {
 }
 .block,.bg-purple[data-v-55a5009d]{
   background-color: #fff;
+}
+#hello {
+  margin: 0px 20px;
 }
 
 

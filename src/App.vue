@@ -87,18 +87,11 @@
 import Vue from 'vue'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
-// import 'element-ui/lib/index.js'
 
 import $ from 'jquery'
 
-// import '../node_modules/jquery/dist/jquery.js'
-// // import jquery from 'jquery' 
-// import bootstrap from 'bootstrap' 
 
 Vue.use(Element)
-
-// Vue.use(jquery)
-// Vue.use(bootstrap)
 
 
 export default {
