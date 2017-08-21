@@ -1,6 +1,6 @@
 <template>
   <div id="hello">
-    <!-- 审核管理111 -->
+    <!-- 审核管理 -->
     <el-row>
       <el-col :span="7">
         <div class="grid-content bg-purple">
@@ -21,26 +21,69 @@
         </div>
       </el-col>
     </el-row>
-    <el-row>
-      <el-col :span="4">
-        <div class="grid-content bg-purple">1</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple-light">2</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple">3</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple-light">4</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple">5</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple-light">6</div>
-      </el-col>
-    </el-row>
+    <!-- 查询 -->
+    <div class="query">
+      <form action="">
+        <label>账号:
+          <input type="text"></input>
+        </label>
+        <label>姓名:
+          <input type="text"></input>
+        </label>
+        <label>状态:
+          <select>
+            <option value="未审核">未审核</option>
+            <option value="已审核">已审核</option>
+            <option value="驳回">驳回</option>
+          </select>
+        </label>
+        <label>审核人:
+          <select id="">
+            <option selected="" value="请选择">请选择</option>
+            <option value="李主管">李主管</option>
+          </select>
+        </label>
+        <label>申请目标:
+          <select id="">
+            <option value="请选择">请选择</option>
+            <option selected="" value="辞职">辞职</option>
+            <option value="代理人">代理人</option>
+            <option value="代理商">代理商</option>
+          </select>
+        </label>
+        <input type="button" value="查询"></input>
+      </form>
+    </div>
+
+    <!-- 数据表格 -->
+    <el-table :data="tableData" border style="width: 100%" :stripe='true'>
+      <el-table-column align='center' prop="num" label="序号" min-width="70">
+      </el-table-column>
+      <el-table-column align='center' prop="name" label="姓名" min-width="80">
+      </el-table-column>
+      <el-table-column align='center' prop="account" label="账号" min-width="130">
+      </el-table-column>
+      <el-table-column align='center' prop="data" label="申请日期" min-width="120">
+      </el-table-column>
+      <el-table-column align='center' prop="target" label="申请目标" min-width="110">
+      </el-table-column>
+      <el-table-column align='center' prop="excuse" label="申请理由" min-width="100">
+      </el-table-column>
+      <el-table-column align='center' prop="datas" label="审核日期" min-width="100">
+      </el-table-column>
+      <el-table-column align='center' prop="person" label="审批人" min-width="100">
+      </el-table-column>
+      <el-table-column align='center' prop="status" label="状态" min-width="100">
+      </el-table-column>
+      <el-table-column align='center' prop="directive" label="操作" min-width="100">
+        <template scope="scope">
+          <el-button @click="handleClick" type="text" size="small">查看11</el-button>
+          <el-button type="text" size="small">编辑22</el-button>
+        </template>
+      </el-table-column>
+
+    </el-table>
+    
   </div>
 </template>
 
@@ -53,6 +96,11 @@ Vue.use(Element)
 
 export default {
   name: 'hello',
+   methods: {
+      handleClick() {
+        console.log(1);
+      }
+    },
   data() {
     return {
       pickerOptions2: {
@@ -83,12 +131,45 @@ export default {
         }]
       },
       value6: '',
-      value7: ''
+      value7: '',
+      tableData: [{
+        num: '1',
+        name: '王小虎',
+        account: '18609281213',
+        data: '2017-08-08',
+        target: '代理人',
+        excuse: '理由',
+        datas: '2017-08-10',
+        person: '李主管',
+        status: '通过',
+        directive: '通过 返回 ',
+      }]
     };
   }
 }
 </script>
 <style scoped>
+/* 自定义的样式 */
+
+.bg-purple[data-v-677f443f],
+.bg-purple-light[data-v-677f443f] {
+  background: none;
+}
+
+#hello {
+  margin: 0px 20px;
+}
+
+.el-table--fit {
+  margin-top: 30px;
+}
+
+
+
+
+
+/* 默认的样式 */
+
 .el-row {
   margin-bottom: 20px;
   &:last-child {
@@ -120,16 +201,5 @@ export default {
 .row-bg {
   padding: 10px 0;
   background-color: #f9fafc;
-}
-
-
-/* 自定义的样式 */
-
-.bg-purple[data-v-161e35eb] {
-  background: none;
-}
-
-.bg-purple-light[data-v-161e35eb] {
-  background: none;
 }
 </style>

@@ -7,12 +7,13 @@
         <!-- 侧边栏 -->
         <el-row class="tac">
           <el-col :span="25">
-            <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" theme="dark" :router=true>
+            <el-menu default-active="2"  class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" theme="dark" :router=true>
   
               <el-submenu index="1">
                 <template slot="title">学员端管理</template>
-                <el-submenu index="1-4">
-                  <template slot="title">学员信息概览</template>
+                <el-submenu index="1-4" >
+                  <template slot="title">学员信息</template>
+                  <el-menu-item index="student_message">学员信息概览</el-menu-item>
                   <el-menu-item index="student_manage">审核管理</el-menu-item>
                   <el-menu-item index="student_coupons">学员卡券明细</el-menu-item>
                   <el-menu-item index="student_course">课程报名管理</el-menu-item>
@@ -25,7 +26,7 @@
               <el-submenu index="2">
                 <template slot="title">教练端管理</template>
                 <el-submenu index="2-4">
-                  <template slot="title">教练信息概览</template>
+                  <template slot="title">教练信息</template>
                   <el-menu-item index="2-4-1">教练信息详情</el-menu-item>
                   <el-menu-item index="2-4-2">设置教练级别</el-menu-item>
                 </el-submenu>
@@ -86,16 +87,26 @@
 import Vue from 'vue'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+// import 'element-ui/lib/index.js'
+
 import $ from 'jquery'
 
+// import '../node_modules/jquery/dist/jquery.js'
+// // import jquery from 'jquery' 
+// import bootstrap from 'bootstrap' 
+
 Vue.use(Element)
+
+// Vue.use(jquery)
+// Vue.use(bootstrap)
+
 
 export default {
   name: 'app',
   data: function () {
     return {
       active: true,
-      headerFixed: true,
+      // headerFixed: true,
       filterText: '',
     };
   },
@@ -151,10 +162,12 @@ body {
   line-height: 24px !important;
   height: 24px !important;
   cursor: pointer;
-}
+}  
 
 main .main-right {
   padding: 0px !important;
+    /* margin:5px !important; */
+
 }
 
 main .main-left {

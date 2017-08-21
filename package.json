@@ -1,7 +1,7 @@
 {
   "name": "houtai",
   "version": "1.0.0",
-  "description": "后台关管理系统",
+  "description": "后台管理系统",
   "author": "peng <1024371442@qq.com>",
   "private": false,
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "element-ui": "1.0.9",
+    "element-ui": "1.4.2",
     "lodash.debounce": "^4.0.8",
     "vue": "2.1.6"
   },
