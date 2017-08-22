@@ -5,6 +5,7 @@ import App from './App'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import Element from 'element-ui'
+// import routeConfig from './router-config'   //引入路由配置
 import 'element-ui/lib/theme-default/index.css'
 
 
@@ -15,7 +16,10 @@ Vue.use(Element)
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
-
+//定义路由
+// const router = new VueRouter({
+//   routes: routeConfig
+// })
 
 //导入各个路由模块
 import login from "./components/login.vue";//登录界面
@@ -26,10 +30,12 @@ import student_course from "./components/student/student_course.vue";//课程报
 import student_test from "./components/student/student_test.vue";//约考记录
 import student_issue from "./components/student/student_issue.vue";//考试发布
 import student_topic from "./components/student/student_topic.vue";//题库管理
+import student_details from "./components/student/student_details.vue";//个人信息详情
+import agent_details from "./components/student/agent_details.vue";//代理详情页面
 
 
 
-//定义路由规则(实例化路由规则对象)
+// 定义路由规则(实例化路由规则对象)
 const router = new VueRouter({
   // routes: routeConfig,
   routes:[
@@ -42,6 +48,8 @@ const router = new VueRouter({
     { path: "/student_test", component:student_test }, //约考记录
     { path: "/student_issue", component:student_issue }, //考试发布
     { path: "/student_topic", component:student_topic }, //题库管理
+    { path: "/student_details", component:student_details }, //个人信息详情
+    { path: "/agent_details", component:agent_details }, //代理详情页面
   ]
 })
 

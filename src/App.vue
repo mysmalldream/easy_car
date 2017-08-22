@@ -15,7 +15,6 @@
                   <template slot="title">学员信息</template>
                   <el-menu-item index="student_message">学员信息概览</el-menu-item>
                   <el-menu-item index="student_manage">审核管理</el-menu-item>
-                  <el-menu-item index="student_coupons">学员卡券明细</el-menu-item>
                   <el-menu-item index="student_course">课程报名管理</el-menu-item>
                   <el-menu-item index="student_test">约考记录</el-menu-item>
                   <el-menu-item index="student_issue">考试发布</el-menu-item>
@@ -205,6 +204,7 @@ main .main-left {
   flex: 0 0 200px;
   height: 680px;
   overflow-y: scroll;
+  overflow-x: none;
 }
 
 

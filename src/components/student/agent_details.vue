@@ -1,6 +1,6 @@
 <template>
   <div id="hello">
-    <!-- 学员信息概览 -->
+    <!-- 代理详情-->
     <!-- 查询 -->
     <div class="query">
       <el-form action="">
@@ -31,7 +31,6 @@
             </label>
           </div>
         </el-col>
-
         <el-col :span="6">
           <div class="grid-content bg-purple">
             <el-button type="primary">查询</el-button>
@@ -41,7 +40,7 @@
       </el-form>
     </div>
     <!-- 数据表格 -->
-    <el-table :data="tableData" border style="width: 100%" :stripe='true'>
+    <el-table :data="tableData" border style="width: 79%" :stripe='true'>
       <el-table-column align='center' prop="num" label="序号" min-width="50">
       </el-table-column>
       <el-table-column align='center' prop="name" label="姓名" min-width="70">
@@ -50,25 +49,8 @@
       </el-table-column>
       <el-table-column align='center' prop="data" label="注册时间" min-width="100">
       </el-table-column>
-      <el-table-column align='center' prop="target" label="身份等级" min-width="100">
+      <el-table-column align='center' prop="target" label="关系" min-width="100">
       </el-table-column>
-      <el-table-column align='center' prop="excuse" label="课程进度" min-width="100">
-      </el-table-column>
-      <el-table-column align='center' prop="datas" label="余额" min-width="100">
-      </el-table-column>
-      <el-table-column align='center' label="可用卡券数" min-width="100">
-        <template scope="scope">
-          <el-button @click="kaquan_detail" type="text" size="small">3</el-button>
-        </template>
-      </el-table-column>
-
-      <el-table-column align='center' label="操作" min-width="150">
-        <template scope="scope">
-          <el-button @click="person_detail" type="primary" size="mini">个人详情</el-button>
-          <el-button @click="agent_detail" type="primary" size="mini">代理详情</el-button>
-        </template>
-      </el-table-column>
-
     </el-table>
 
   </div>
@@ -91,20 +73,9 @@ export default {
     // this.$router.push('/activePublic');
     //  this.$router.push('/student_details')  //将你的跳转写在这里。
   },
+  created() {
+  },
   methods: {
-    kaquan_detail() {
-      console.log("卡券数量");
-      this.$router.push('/student_coupons')
-    },
-    person_detail() {
-      console.log("个人详情");
-      this.$router.push('/student_details')
-    },
-    agent_detail() {
-      console.log("代理详情");
-      this.$router.push('/agent_details')
-
-    }
   },
   data() {
     return {
@@ -116,10 +87,19 @@ export default {
         name: '王小虎',
         account: '18609281213',
         data: '2017-08-08',
-        target: '代理人',
-        excuse: '理由',
-        datas: '300',
-        person: '李主管',
+        target: '学员',
+      }, {
+        num: '2',
+        name: '王小虎',
+        account: '18609281213',
+        data: '2017-08-08',
+        target: '队友',
+      }, {
+        num: '3',
+        name: '王小虎',
+        account: '18609281213',
+        data: '2017-08-08',
+        target: '学员',
       }]
     }
   }
@@ -130,7 +110,7 @@ export default {
 /* 自定义的样式 */
 
 .query {
-  padding: 40px 20px 30px 20px;
+  padding: 20px 20px 30px 20px;
   margin-bottom: 30px;
 }
 
@@ -144,12 +124,6 @@ export default {
 }
 
 #hello {
-  margin: 0px 20px;
+  margin: 20px;
 }
-
-
-
-/* 默认的样式 */
-
-
 </style>

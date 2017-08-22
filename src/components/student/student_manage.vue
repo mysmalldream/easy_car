@@ -3,7 +3,7 @@
     <!-- 审核管理 -->
     <!-- 查询 -->
     <div class="query">
-      <form action="">
+      <el-form action="">
         <el-row>
           <el-col :span="7">
             <div class="grid-content bg-purple">
@@ -53,7 +53,7 @@
           <el-button type="primary">查询</el-button>
         </div>
 
-      </form>
+      </el-form>
     </div>
 
     <!-- 数据表格 -->
@@ -70,7 +70,7 @@
       </el-table-column>
       <el-table-column align='center' prop="excuse" label="申请理由" min-width="100">
         <template scope="scope">
-          <el-button @click="look" type="text" size="small">查看</el-button>
+          <el-button @click="open4" type="text" size="small">查看</el-button>
         </template>
       </el-table-column>
       <el-table-column align='center' prop="datas" label="审核日期" min-width="100">
@@ -82,8 +82,8 @@
       <el-table-column align='center' prop="directive" label="操作" min-width="100">
         <template scope="scope">
           <el-button @click="pass" type="text" size="small">通过</el-button>
-          <el-button  @click="refuse" type="text" size="small">驳回</el-button>
-          <el-button  @click="excuse" type="text" size="small">查看理由</el-button>
+          <el-button @click="refuse" type="text" size="small">驳回</el-button>
+          <el-button @click="excuse" type="text" size="small">查看理由</el-button>
         </template>
       </el-table-column>
 
@@ -104,7 +104,39 @@ Vue.use(Element)
 export default {
   name: 'hello',
   methods: {
-    look() {
+    // look() {
+    open4() {
+      const h = this.$createElement;
+      this.$msgbox({
+        title: '消息',
+        message: h('p', null, [
+          h('span', null, '内容可以是 '),
+          h('i', { style: 'color: teal' }, 'VNode')
+        ]),
+        showCancelButton: true,
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        beforeClose: (action, instance, done) => {
+          if (action === 'confirm') {
+            instance.confirmButtonLoading = true;
+            instance.confirmButtonText = '执行中...';
+            setTimeout(() => {
+              done();
+              setTimeout(() => {
+                instance.confirmButtonLoading = false;
+              }, 300);
+            }, 3000);
+          } else {
+            done();
+          }
+        }
+      }).then(action => {
+        this.$message({
+          type: 'info',
+          message: 'action: ' + action
+        });
+      });
+      // },
       console.log('查看');
     },
     pass() {
@@ -208,11 +240,11 @@ export default {
 }
 
 #hello {
-  margin: 0px 20px;
+  margin:40px 20px;
 }
 
 .el-table--fit {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .query .el-row {
@@ -246,6 +278,7 @@ export default {
 .query .choose .el-button {
   margin-left: 25px;
 }
+
 
 
 
