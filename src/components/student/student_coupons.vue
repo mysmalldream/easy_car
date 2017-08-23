@@ -1,13 +1,26 @@
 <template>
   <div id="hello">
     <!-- 学员卡券明细-->
+    <div class="choose_button">
+      <el-button size='mini'>
+        <a href="javascript:;" @click="backto"> 返 回 </a>
+      </el-button>
+    </div>
     <!-- 查询 -->
     <div class="query">
+      <div class="account">
+        <span>
+          账号：18609271234
+        </span>
+        <span>
+          姓名：薛宝钗
+        </span>
+      </div>
       <el-form action="">
         <el-col :span="6">
           <div class="grid-content bg-purple">
             <div class="block">
-              <span class="demonstration">注册日期:</span>
+              <span class="demonstration">使用日期:</span>
               <el-date-picker v-model="value6" type="daterange" placeholder="请选择注册日期范围">
               </el-date-picker>
             </div>
@@ -21,18 +34,18 @@
               </el-option>
             </el-select>
           </label>
-          <el-button type="primary">查询</el-button>
+          <el-button @click="query" type="primary">查询</el-button>
         </div>
 
       </el-form>
     </div>
     <!-- 数据表格 -->
-    <el-table :data="tableData" border style="width: 79%" :stripe='true'>
+    <el-table :data="tableData" border style="width: 80%" :stripe='true'>
       <el-table-column align='center' prop="num" label="卡券编号" min-width="70">
       </el-table-column>
-      <el-table-column align='center' prop="name" label="状态" min-width="70">
+      <el-table-column align='center' prop="status" label="状态" min-width="70">
       </el-table-column>
-      <el-table-column align='center' prop="account" label="使用时间" min-width="70">
+      <el-table-column align='center' prop="date" label="使用时间" min-width="70">
       </el-table-column>
     </el-table>
 
@@ -53,12 +66,16 @@ Vue.use(Element)
 export default {
   name: 'hello',
   created: function () {
-    // this.$router.push('/activePublic');
-    //  this.$router.push('/student_details')  //将你的跳转写在这里。
   },
   created() {
   },
   methods: {
+    backto() {
+      this.$router.go(-1);
+    },
+    query() {
+      console.log('查询');
+    }
   },
   data() {
     return {
@@ -78,12 +95,12 @@ export default {
       value: '',
       tableData: [{
         num: '18609281213',
-        name: '未使用',
-        account: '2017-08-23 13:14',
+        status: '未使用',
+        date: '2017-08-23 13:14',
       }, {
         num: '18609281213',
-        name: '已使用',
-        account: '2017-08-23 13:14',
+        status: '已使用',
+        date: '2017-08-23 13:14',
       }]
     }
   }
@@ -94,7 +111,7 @@ export default {
 /* 自定义的样式 */
 
 .query {
-  padding: 40px 20px 30px 20px;
+  padding: 0px 0px 30px 0px;
 }
 
 .el-input {
@@ -109,7 +126,30 @@ export default {
 #hello {
   margin: 0px 20px;
 }
-.el-button--primary{
- margin-left: 40px;
+
+.el-button--primary {
+  margin-left: 40px;
+}
+
+.query .account {
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.query .account span {
+  margin-right: 70px;
+}
+
+.choose_button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.choose_button button span a {
+  text-decoration: none;
+  color: gray;
+  padding: 5px 10px;
 }
 </style>

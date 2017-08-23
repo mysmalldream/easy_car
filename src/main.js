@@ -25,6 +25,7 @@ Vue.use(VueResource)
 import login from "./components/login.vue";//登录界面
 import student_message from "./components/student/student_message.vue";//学员信息概览
 import student_manage from "./components/student/student_manage.vue";//审核管理
+import other_fee from "./components/student/other_fee.vue";//其他费用
 import student_coupons from "./components/student/student_coupons.vue";//学员卡券明细
 import student_course from "./components/student/student_course.vue";//课程报名管理
 import student_test from "./components/student/student_test.vue";//约考记录
@@ -43,6 +44,7 @@ const router = new VueRouter({
     { path: "/login", component:login }, //登录界面
     { path: "/student_message", component:student_message }, //学员信息概览
     { path: "/student_manage", component:student_manage }, //审核管理
+    { path: "/other_fee", component:other_fee }, //其他费用
     { path: "/student_coupons", component:student_coupons }, //学员卡券明细
     { path: "/student_course", component:student_course }, //课程报名管理
     { path: "/student_test", component:student_test }, //约考记录
