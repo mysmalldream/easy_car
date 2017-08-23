@@ -79,11 +79,11 @@ export default {
       tableData: [{
         num: '18609281213',
         name: '未使用',
-        account: '2017-08-23',
+        account: '2017-08-23 13:14',
       }, {
         num: '18609281213',
         name: '已使用',
-        account: '2017-08-23',
+        account: '2017-08-23 13:14',
       }]
     }
   }

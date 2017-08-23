@@ -7,7 +7,7 @@
         <!-- 侧边栏 -->
         <el-row class="tac">
           <el-col :span="25">
-            <el-menu default-active="2"  class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" theme="dark" :router=true>
+            <el-menu default-active="2"  :unique-opened='true' class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" theme="dark" :router=true>
   
               <el-submenu index="1">
                 <template slot="title">学员端管理</template>
@@ -192,19 +192,21 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* min-height: 100%; */
+  height: 100%;
   border: solid 0px #E9ECF1;
   background-color: #FCFCFC;
+
 }
 
 main .main-left {
   text-align: center;
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 200px;
-  flex: 0 0 200px;
-  height: 680px;
+  -ms-flex: 0 0 20px;
+  flex: 0 0 210px ;
+  height: 675px;
+  /* height: 100%; */
   overflow-y: scroll;
-  overflow-x: none;
+  overflow-x: auto;
 }
 
 
