@@ -181,6 +181,7 @@ main .main-left {
 
 ::-webkit-scrollbar {
   width: 5px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -188,7 +189,7 @@ main .main-left {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #00aff0;
+  background-color:#bbb;
 }
 
 
