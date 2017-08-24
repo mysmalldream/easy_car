@@ -27,12 +27,12 @@ import student_message from "./components/student/student_message.vue";//学员�
 import student_manage from "./components/student/student_manage.vue";//审核管理
 import other_fee from "./components/student/other_fee.vue";//其他费用
 import student_coupons from "./components/student/student_coupons.vue";//学员卡券明细
-import student_course from "./components/student/student_course.vue";//课程报名管理
 import student_test from "./components/student/student_test.vue";//约考记录
 import student_issue from "./components/student/student_issue.vue";//考试发布
 import student_topic from "./components/student/student_topic.vue";//题库管理
 import student_details from "./components/student/student_details.vue";//个人信息详情
 import agent_details from "./components/student/agent_details.vue";//代理详情页面
+import student_course from "./components/student/student_course.vue";//课程报名管理
 
 
 
@@ -46,12 +46,12 @@ const router = new VueRouter({
     { path: "/student_manage", component:student_manage }, //审核管理
     { path: "/other_fee", component:other_fee }, //其他费用
     { path: "/student_coupons", component:student_coupons }, //学员卡券明细
-    { path: "/student_course", component:student_course }, //课程报名管理
     { path: "/student_test", component:student_test }, //约考记录
     { path: "/student_issue", component:student_issue }, //考试发布
     { path: "/student_topic", component:student_topic }, //题库管理
     { path: "/student_details", component:student_details }, //个人信息详情
     { path: "/agent_details", component:agent_details }, //代理详情页面
+    { path: "/student_course", component:student_course }, //课程报名管理
   ]
 })
 
