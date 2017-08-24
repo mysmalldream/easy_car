@@ -25,16 +25,24 @@
         </el-col>
         <el-col :span="6">
           <div class="grid-content bg-purple">
-            <label>姓名:
-              <el-input size="small2" placeholder="请输入您的姓名" v-model="input2">
-              </el-input>
-            </label>
+            <div class="block">
+
+              <label>姓名:
+                <el-input size="small2" placeholder="请输入您的姓名" v-model="input2">
+                </el-input>
+              </label>
+            </div>
+
           </div>
         </el-col>
         <el-col :span="6">
           <div class="grid-content bg-purple">
-            <el-button type="primary">查询</el-button>
+            <div class="block">
+
+              <el-button type="primary">查询</el-button>
+            </div>
           </div>
+
         </el-col>
 
       </el-form>

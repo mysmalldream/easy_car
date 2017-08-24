@@ -55,10 +55,9 @@
 
       </el-form>
     </div>
-
     <!-- 数据表格 -->
     <el-table :data="tableData" border style="width: 100%" :stripe='true'>
-      <el-table-column align='center' prop="num" label="序号" min-width="50">
+      <el-table-column align='center' prop="num" label="序号" min-width="60">
       </el-table-column>
       <el-table-column align='center' prop="name" label="姓名" min-width="80">
       </el-table-column>
@@ -68,11 +67,29 @@
       </el-table-column>
       <el-table-column align='center' prop="target" label="申请目标" min-width="100">
       </el-table-column>
+
       <el-table-column align='center' prop="excuse" label="申请理由" min-width="100">
         <template scope="scope">
-          <el-button @click="open4" type="text" size="small">查看</el-button>
+
+          <el-button type="text" @click="dialogTableVisible = true">查看</el-button>
+          <el-dialog title="申请代理人/代理商" :visible.sync="dialogTableVisible" :before-close="ai_dialog_close" size='tiny' top=7%>
+
+            <ul class="student_details">
+              <li> 账号：13002918015</li>
+              <li> 姓名：薛宝钗</li>
+              <li> 电话：13002918015</li>
+              <li> 银行卡卡号：6217000000000000000000000000</li>
+              <li> 身份证：610122199011111220</li>
+              <li> 正：<img src='../../../static/imgs/test.jpg'></img>
+              </li>
+              <li> 反：<img src='../../../static/imgs/test.jpg'></img>
+              </li>
+            </ul>
+
+          </el-dialog>
         </template>
       </el-table-column>
+
       <el-table-column align='center' prop="datas" label="审核日期" min-width="100">
       </el-table-column>
       <el-table-column align='center' prop="person" label="审批人" min-width="100">
@@ -82,8 +99,25 @@
       <el-table-column align='center' prop="directive" label="操作" min-width="100">
         <template scope="scope">
           <el-button @click="pass" type="text" size="small">通过</el-button>
-          <el-button @click="refuse" type="text" size="small">驳回</el-button>
-          <el-button @click="excuse" type="text" size="small">查看理由</el-button>
+
+          <el-button type="text" @click="dialogFormVisible = true" size="small">驳回</el-button>
+
+          <el-dialog title="驳 回 理 由" :visible.sync="dialogFormVisible" :show-close=false :before-close="ai_dialog_close1" size='tiny' custom-class='ceshi' top=20%>
+            <div class="refuse">
+              <el-input type="textarea" :autosize="{ minRows: 12, maxRows: 6}" placeholder="请输入内容..." v-model="textarea">
+              </el-input>
+              <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogFormVisible = false">取 消</el-button>
+                <el-button type="primary" @click="dialogFormVisible = false ">确 定</el-button>
+              </div>
+            </div>
+          </el-dialog>
+
+          <el-button type="text" @click="excuse = true" size='small'>查看理由</el-button>
+          <el-dialog title="查看理由" :visible.sync="excuse" :before-close="ai_dialog_close2" size='tiny' top=30%>
+            <span>测试数据查看理由 测试数据查看理由 测试数据查看理由 测试数据查看理由</span>
+          </el-dialog>
+
         </template>
       </el-table-column>
 
@@ -104,53 +138,41 @@ Vue.use(Element)
 export default {
   name: 'hello',
   methods: {
-    // look() {
-    open4() {
-      const h = this.$createElement;
-      this.$msgbox({
-        title: '消息',
-        message: h('p', null, [
-          h('span', null, '内容可以是 '),
-          h('i', { style: 'color: teal' }, 'VNode')
-        ]),
-        showCancelButton: true,
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        beforeClose: (action, instance, done) => {
-          if (action === 'confirm') {
-            instance.confirmButtonLoading = true;
-            instance.confirmButtonText = '执行中...';
-            setTimeout(() => {
-              done();
-              setTimeout(() => {
-                instance.confirmButtonLoading = false;
-              }, 300);
-            }, 3000);
-          } else {
-            done();
-          }
-        }
-      }).then(action => {
-        this.$message({
-          type: 'info',
-          message: 'action: ' + action
-        });
-      });
-      // },
-      console.log('查看');
+    ai_dialog_close() {
+      this.dialogTableVisible = false;   //查看弹出框
     },
+    ai_dialog_close1() {
+      this.dialogFormVisible = false;   //驳回弹出框
+      // this.confirm ;
+    },
+    ai_dialog_close2() {
+      this.excuse = false;   //查看理由弹出框
+    },
+    // confirm() {
+    //   this.confirm = false;
+    //   console.log('您点击了驳回理由确定按钮');
+    // },
     pass() {
       console.log('通过');
-    },
-    refuse() {
-      console.log('驳回');
-    },
-    excuse() {
-      console.log('查看理由');
     },
   },
   data() {
     return {
+      // confirm:false,
+      textarea: '',     //驳回理由输入框
+      form: {
+        name: '',
+        region: '',
+        date1: '',
+        date2: '',
+        delivery: false,
+        type: [],
+        resource: '',
+        desc: ''
+      },
+      dialogTableVisible: false,     //查看弹出框
+      dialogFormVisible: false,     //驳回弹出框
+      excuse: false,                //查看理由弹出框
       options: [{
         value: '选项1',
         label: '未审核'
@@ -211,7 +233,6 @@ export default {
           }
         }]
       },
-      // value: '111',
       value6: '',
       value7: '',
       input1: '',
@@ -221,7 +242,7 @@ export default {
         account: '18609281213',
         data: '2017-08-08',
         target: '代理人',
-        excuse: '理由',
+        excuse: '理由1111',
         datas: '2017-08-10',
         person: '李主管',
         status: '通过',
@@ -234,13 +255,18 @@ export default {
 <style scoped>
 /* 自定义的样式 */
 
+#hello {
+  margin: 0px 20px;
+}
+
 .bg-purple[data-v-677f443f],
 .bg-purple-light[data-v-677f443f] {
   background: none;
 }
 
-#hello {
-  margin:40px 20px;
+.block,
+.bg-purple[data-v-55a5009d] {
+  background-color: #fff;
 }
 
 .el-table--fit {
@@ -273,19 +299,43 @@ export default {
 
 .query .choose .el-select {
   width: 100px;
+  margin-right: 20px;
 }
 
 .query .choose .el-button {
   margin-left: 25px;
 }
 
+.student_details {
+  padding: 0px;
+}
 
+.student_details li {
+  list-style: none;
+  line-height: 25px;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-align: left;
+}
 
+.student_details li:nth-of-type(6)>img,
+li:nth-of-type(7)>img {
+  width: 240px;
+  height: 151px;
+  margin-left: 25px;
+}
 
+.refuse .dialog-footer {
+  margin-top: 30px !important;
+}
 
+.refuse .dialog-footer .el-button--default {
+  margin-right: 60px !important;
+}
 
-
-
+.refuse .dialog-footer .el-button--primary {
+  margin-left: 60px;
+}
 
 
 

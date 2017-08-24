@@ -22,7 +22,7 @@
         </el-col>
 
         <div class="choose">
-          <el-col :span="4">
+          <el-col :span="5">
             <label>身份等级:
               <el-select v-model="value" placeholder="请选择">
                 <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
@@ -207,14 +207,6 @@ export default {
 .query .choose .el-select {
   width: 110px;
 }
-
-
-
-
-
-
-
-
 
 /* 默认的样式 */
 </style>
