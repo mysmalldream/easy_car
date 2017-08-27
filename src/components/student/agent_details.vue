@@ -74,10 +74,9 @@ import 'element-ui/lib/index.js'
 Vue.use(Element)
 
 
-
 export default {
   name: 'hello',
-  created: function () {
+  created: function() {
     // this.$router.push('/activePublic');
     //  this.$router.push('/student_details')  //将你的跳转写在这里。
   },
@@ -134,6 +133,4 @@ export default {
 #hello {
   margin: 20px;
 }
-
-
 </style>

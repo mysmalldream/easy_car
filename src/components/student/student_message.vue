@@ -103,7 +103,7 @@ Vue.use(Element)
 
 export default {
   name: 'hello',
-  created: function () {
+  created: function() {
   },
   methods: {
     other_fee() {
@@ -207,6 +207,7 @@ export default {
 .query .choose .el-select {
   width: 110px;
 }
+
 
 /* 默认的样式 */
 </style>

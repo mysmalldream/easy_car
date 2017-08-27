@@ -137,11 +137,6 @@ body {
   margin: 0 !important;
 }
 
-
-/* #hello{
-  padding: 0 !important;
-} */
-
 #app {
   min-width: 1200px;
   margin: 0 auto;

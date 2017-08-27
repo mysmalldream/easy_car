@@ -70,7 +70,7 @@
 
       <el-table-column align='center' prop="excuse" label="申请理由" min-width="100">
         <template scope="scope">
-
+          
           <el-button type="text" @click="dialogTableVisible = true">查看</el-button>
           <el-dialog title="申请代理人/代理商" :visible.sync="dialogTableVisible" :before-close="ai_dialog_close" size='tiny' top=7%>
 
@@ -336,7 +336,6 @@ li:nth-of-type(7)>img {
 .refuse .dialog-footer .el-button--primary {
   margin-left: 60px;
 }
-
 
 
 /* 默认的样式 */

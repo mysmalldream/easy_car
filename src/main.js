@@ -5,7 +5,8 @@ import App from './App'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import Element from 'element-ui'
-// import routeConfig from './router-config'   //引入路由配置
+// import {routeConfig} from './router-config'   //引入路由配置
+// import routeConfig from './router-config'
 import 'element-ui/lib/theme-default/index.css'
 
 
@@ -20,7 +21,7 @@ Vue.use(VueResource)
 // const router = new VueRouter({
 //   routes: routeConfig
 // })
-
+// console.log(routeConfig);
 //导入各个路由模块
 import login from "./components/login.vue";//登录界面
 import student_message from "./components/student/student_message.vue";//学员信息概览

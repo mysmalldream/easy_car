@@ -29,4 +29,4 @@ let router = new vueRouter({
     ]
 });
 
-export default router
+// export default router

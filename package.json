@@ -1,8 +1,8 @@
 {
   "name": "houtai",
   "version": "1.0.0",
-  "description": "后台管理系统",
-  "author": "peng <1024371442@qq.com>",
+  "description": "易学车后台管理系统",
+  "author": "众智软件",
   "private": false,
   "scripts": {
     "dev": "node build/dev-server.js",
