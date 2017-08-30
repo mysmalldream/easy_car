@@ -3,9 +3,9 @@
     <!-- 审核管理 -->
     <!-- 查询 -->
     <div class="query">
-      <el-form action="">
+      <el-form :inline="true" action="">
         <el-row>
-          <el-col :span="7">
+          <el-col :span="8">
             <div class="grid-content bg-purple">
               <div class="block">
                 <span class="demonstration">申请日期:</span>
@@ -14,7 +14,7 @@
               </div>
             </div>
           </el-col>
-          <el-col :span="7">
+          <el-col :span="8">
             <div class="grid-content bg-purple-light">
               <div class="block">
                 <span class="demonstration">审核日期:</span>
@@ -26,30 +26,32 @@
         </el-row>
 
         <div class="choose">
-          <label>账号:
-            <input type="text">
-          </label>
-          <label>姓名:
-            <input type="text">
-          </label>
-          <label>状态:
+          <el-form-item label="账号">
+            <el-input size="small2" placeholder="请输入您的账号" v-model="input1">
+            </el-input>
+          </el-form-item>
+          <el-form-item label="姓名">
+            <el-input size="small2" placeholder="请输入您的姓名" v-model="input2">
+            </el-input>
+          </el-form-item>
+          <el-form-item label="状态">
             <el-select v-model="value" placeholder="请选择">
               <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
               </el-option>
             </el-select>
-          </label>
-          <label>审核人:
+          </el-form-item>
+          <el-form-item label="审核人">
             <el-select v-model="value1" placeholder="请选择">
               <el-option v-for="item in options1" :key="item.value1" :label="item.label" :value="item.value1">
               </el-option>
             </el-select>
-          </label>
-          <label>申请目标:
+          </el-form-item>
+          <el-form-item label="申请目标">
             <el-select v-model="value2" placeholder="请选择">
               <el-option v-for="item in options2" :key="item.value2" :label="item.label" :value="item.value2">
               </el-option>
             </el-select>
-          </label>
+          </el-form-item>
           <el-button type="primary">查询</el-button>
         </div>
 
@@ -70,7 +72,7 @@
 
       <el-table-column align='center' prop="excuse" label="申请理由" min-width="100">
         <template scope="scope">
-          
+
           <el-button type="text" @click="dialogTableVisible = true">查看</el-button>
           <el-dialog title="申请代理人/代理商" :visible.sync="dialogTableVisible" :before-close="ai_dialog_close" size='tiny' top=7%>
 
@@ -104,7 +106,7 @@
 
           <el-dialog title="驳 回 理 由" :visible.sync="dialogFormVisible" :show-close=false :before-close="ai_dialog_close1" size='tiny' custom-class='ceshi' top=20%>
             <div class="refuse">
-              <el-input type="textarea" :autosize="{ minRows: 12, maxRows: 6}" placeholder="请输入内容..." v-model="textarea">
+              <el-input resize=none type="textarea" :autosize="{ minRows: 12, maxRows: 6}" placeholder="请输入内容..." v-model="textarea">
               </el-input>
               <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisible = false">取 消</el-button>
@@ -148,10 +150,6 @@ export default {
     ai_dialog_close2() {
       this.excuse = false;   //查看理由弹出框
     },
-    // confirm() {
-    //   this.confirm = false;
-    //   console.log('您点击了驳回理由确定按钮');
-    // },
     pass() {
       console.log('通过');
     },
@@ -206,36 +204,10 @@ export default {
         label: '代理商'
       }],
       value2: '',
-      pickerOptions2: {
-        shortcuts: [{
-          text: '最近一周',
-          onClick(picker) {
-            const end = new Date();
-            const start = new Date();
-            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-            picker.$emit('pick', [start, end]);
-          }
-        }, {
-          text: '最近一个月',
-          onClick(picker) {
-            const end = new Date();
-            const start = new Date();
-            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-            picker.$emit('pick', [start, end]);
-          }
-        }, {
-          text: '最近三个月',
-          onClick(picker) {
-            const end = new Date();
-            const start = new Date();
-            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-            picker.$emit('pick', [start, end]);
-          }
-        }]
-      },
       value6: '',
       value7: '',
       input1: '',
+      input2: '',
       tableData: [{
         num: '1',
         name: '王小虎',
@@ -273,37 +245,13 @@ export default {
   margin-top: 20px;
 }
 
-.query .el-row {
-  width: 1010px !important;
-}
-
-.query .choose input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: #fff;
-  background-image: none;
-  border-radius: 4px;
-  border: 1px solid #bfcbd9;
-  box-sizing: border-box;
-  color: #1f2d3d;
-  display: inline-block;
-  font-size: inherit;
-  height: 36px;
-  line-height: 1;
-  outline: none;
-  padding: 3px 10px;
-  margin: 0px 15px;
-  transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
-}
-
 .query .choose .el-select {
   width: 100px;
   margin-right: 20px;
 }
 
-.query .choose .el-button {
-  margin-left: 25px;
+.el-input--small2 {
+  width: 130px;
 }
 
 .student_details {
@@ -336,6 +284,8 @@ li:nth-of-type(7)>img {
 .refuse .dialog-footer .el-button--primary {
   margin-left: 60px;
 }
+
+
 
 
 /* 默认的样式 */

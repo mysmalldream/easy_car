@@ -5,7 +5,7 @@
     <div class="query">
       <el-form action="">
         <el-row>
-          <el-col :span="7">
+          <el-col :span="8">
             <div class="grid-content bg-purple">
               <div class="block">
                 <span class="demonstration">报名日期:</span>

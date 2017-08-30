@@ -65,21 +65,25 @@
 
             <el-table-column inline-template align='center' label="操作">
               <span>
-                <el-button type="danger" size="small" @click="setCurrent(row)">修改</el-button>
-                <el-button type="primary" size="small" @click="removed(row)">删除</el-button>
+                <el-button type="primary" size="small" @click="setCurrent(row)">修改</el-button>
+                <el-button type="danger" size="small" @click="removed(row)">删除</el-button>
               </span>
             </el-table-column>
           </el-table>
           <!-- 考试发布弹窗-->
-          <el-dialog title="考试发布" v-model="dialogCreateVisible" :close-on-click-modal="false" :close-on-press-escape="false" @close="reset">
-            <el-form id="#create" :model="create" :rules="rules" ref="create" label-width="100px">
-              <el-form-item label="日期" prop="username">
-                <el-input v-model="create.username"></el-input>
-              </el-form-item>
-              <el-form-item label="地点" prop="name">
-                <el-input v-model="create.name"></el-input>
-              </el-form-item>
+          <el-dialog title="考试发布" v-model="dialogCreateVisible" :close-on-click-modal="false" :close-on-press-escape="false" @close="reset" top=30%>
+
+            <el-form :inline="true" id="#create" :model="create" :rules="rules" ref="create" label-width="100px">
+              <div class="block">
+                <span class="demonstration">日期:</span>
+                <el-date-picker v-model="value1" type="date" placeholder="请选择日期" :picker-options="pickerOptions0">
+                </el-date-picker>
+                <el-form-item label="地点">
+                  <el-input v-model="formInline.user" placeholder="请输入地点"></el-input>
+                </el-form-item>
+              </div>
             </el-form>
+
             <div slot="footer" class="dialog-footer">
               <el-button @click="dialogCreateVisible = false">取 消</el-button>
               <el-button type="primary" :loading="createLoading" @click="createUser">确 定</el-button>
@@ -126,11 +130,21 @@ export default {
         pass_number: '10'
       }],
       multipleSelection: [],
+      pickerOptions0: {
+        disabledDate(time) {
+          return time.getTime() < Date.now() - 8.64e7;
+        }
+      },
+      formInline: {
+        user: '',
+      },
+      value1: '',
       input1: '',
       input2: '',
       input3: '',
       value6: '',
       value: '',
+      // getuuid :'',
       activeName: 'first',
       options: [{
         value: '选项1',
@@ -139,14 +153,11 @@ export default {
         value: '选项2',
         label: '结束'
       }],
-      //   url: 'http://172.10.0.201/api/v1/accounts', //此处填写接口地址
-      url: 'http://api.botue.com/course', //此处填写接口地址
+      url: 'http://172.10.0.201/api/v1/accounts', //此处填写接口地址
       users: [],
       keywords: '',
       select: '',
       filter: {
-        name: '',
-        username: '',
         phone: '',
         per_page: 10, // 页大小
         page: 1, // 当前页
@@ -215,7 +226,6 @@ export default {
       this.filter.page = val;
       this.getUsers();
     },
-
     //选则相关
     tableSelectionChange(val) {
       this.selected = val;

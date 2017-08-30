@@ -4,7 +4,7 @@
     <!-- 查询 -->
     <div class="query">
       <el-form action="">
-        <el-col :span="6">
+        <el-col :span="7">
           <div class="grid-content bg-purple">
             <div class="block">
               <span class="demonstration">注册日期:</span>
@@ -35,7 +35,7 @@
 
           </div>
         </el-col>
-        <el-col :span="6">
+        <el-col :span="4">
           <div class="grid-content bg-purple">
             <div class="block">
 
@@ -77,8 +77,6 @@ Vue.use(Element)
 export default {
   name: 'hello',
   created: function() {
-    // this.$router.push('/activePublic');
-    //  this.$router.push('/student_details')  //将你的跳转写在这里。
   },
   created() {
   },

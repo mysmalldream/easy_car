@@ -1,13 +1,13 @@
 <template>
   <div id="hello">
-    <!-- 学员信息概览 -->
+    <!-- 教练信息概览 -->
     <!-- 查询 -->
     <div class="query">
       <el-form :inline="true" action="">
         <el-col :span="4">
           <div class="grid-content bg-purple">
             <label>账号:
-              <el-input  size="small2" placeholder="请输入您的账号" v-model="input1">
+              <el-input size="small2" placeholder="请输入您的账号" v-model="input1">
               </el-input>
             </label>
           </div>
@@ -43,7 +43,7 @@
 
         <el-col :span="1">
           <div class="grid-content bg-purple">
-            <el-button type="primary">查询</el-button>
+            <el-button type="primary" @click="click_button">查询</el-button>
           </div>
         </el-col>
 
@@ -51,37 +51,27 @@
     </div>
     <!-- 数据表格 -->
     <el-table :data="tableData" border style="width: 100%" :stripe='true'>
-      <el-table-column align='center' prop="num" label="序号" min-width="70">
+      <el-table-column align='center' prop="num" label="序号" min-width="50">
       </el-table-column>
-      <el-table-column align='center' prop="name" label="姓名" min-width="80">
+      <el-table-column align='center' prop="name" label="姓名" min-width="70">
       </el-table-column>
-      <el-table-column align='center' prop="account" label="账号" min-width="130">
+      <el-table-column align='center' prop="account" label="账号" min-width="110">
       </el-table-column>
       <el-table-column align='center' prop="data" label="注册时间" min-width="110">
       </el-table-column>
-      <el-table-column align='center' prop="grade" label="身份等级" min-width="100">
+      <el-table-column align='center' prop="grade" label="身份等级" min-width="90">
       </el-table-column>
-      <el-table-column align='center' prop="status" label="状态" min-width="90">
+      <el-table-column align='center' prop="status" label="级别" min-width="90">
       </el-table-column>
-      <el-table-column align='center' prop="fee" label="报名费" min-width="80">
+      <el-table-column align='center' prop="days" label="本月上线天数" min-width="100">
       </el-table-column>
-      <el-table-column align='center' prop="otherfee" label="其他费用" min-width="100">
-        <template scope="scope">
-          <el-button @click="other_fee" type="text" size="small">300</el-button>
-        </template>
+      <el-table-column align='center' prop="course" label="本月服务课时" min-width="100">
       </el-table-column>
-      <el-table-column align='center' prop="leavefee" label="余额" min-width="70">
-      </el-table-column>
-      <el-table-column align='center' label="可用卡券数" min-width="110">
-        <template scope="scope">
-          <el-button @click="kaquan_detail" type="text" size="small">3</el-button>
-        </template>
-      </el-table-column>
-
       <el-table-column align='center' label="操作" min-width="170">
         <template scope="scope">
-          <el-button @click="person_detail" type="primary" size="mini">个人详情</el-button>
-          <el-button @click="agent_detail" type="primary" size="mini">代理详情</el-button>
+          <el-button @click="coach_details" type="primary" size="mini">个人详情</el-button>
+          <el-button @click="set_rank" type="primary" size="mini">设置级别</el-button>
+          <el-button @click="area_distribute" type="primary" size="mini">场地分配</el-button>
         </template>
       </el-table-column>
 
@@ -104,22 +94,22 @@ export default {
   created: function() {
   },
   methods: {
-    other_fee() {
-      console.log("其他费用");
-      this.$router.push('/other_fee')
-    },
-    kaquan_detail() {
-      console.log("卡券数量");
-      this.$router.push('/student_coupons')
-    },
-    person_detail() {
+    coach_details() {
       console.log("个人详情");
-      this.$router.push('/student_details')
+      this.$router.push('/coach_details')
     },
-    agent_detail() {
-      console.log("代理详情");
-      this.$router.push('/agent_details')
+    set_rank() {
+      console.log("设置级别");
+      this.$router.push('/set_rank')
 
+    },
+    area_distribute() {
+      console.log("场地分配");
+      this.$router.push('/area_distribute')
+
+    },
+    click_button() {
+      console.log('查询按钮被电机了');
     }
   },
   data() {
@@ -131,16 +121,7 @@ export default {
         label: '普通用户'
       }, {
         value: '选项2',
-        label: '代理人'
-      }, {
-        value: '选项3',
-        label: '代理商'
-      }, {
-        value: '选项4',
-        label: '普通学员'
-      }, {
-        value: '选项5',
-        label: 'VIP学员'
+        label: '教练'
       }],
       value: '',
       options1: [{
@@ -176,8 +157,8 @@ export default {
         data: '2017-08-08',
         grade: '普通用户',
         status: '已下单',
-        fee: '600',
-        otherfee: '300',
+        days: '600',
+        course: '300',
         leavefee: '3000',
         coupons: '3',
       }]
@@ -205,6 +186,8 @@ export default {
 .query .choose .el-select {
   width: 110px;
 }
+
+
 
 
 /* 默认的样式 */

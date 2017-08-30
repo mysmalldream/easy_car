@@ -206,7 +206,7 @@ export default {
 }
 
 .query .choose .el-select {
-  width: 130px;
+  width: 100px;
   margin-right: 20px;
 }
 

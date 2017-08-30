@@ -23,15 +23,13 @@
                             <template slot="title">教练端管理</template>
                             <el-submenu index="2-4">
                                 <template slot="title">教练信息</template>
-                                <el-menu-item index="coach_message">教练信息概览</el-menu-item>
-                                <el-menu-item index="coach_details">教练信息详情</el-menu-item>
-                                <el-menu-item index="set_rank">设置教练级别</el-menu-item>
-                                <el-menu-item index="area_distribute">场地分配</el-menu-item>
+                                <el-menu-item index="2-4-1">教练信息详情</el-menu-item>
+                                <el-menu-item index="2-4-2">设置教练级别</el-menu-item>
                             </el-submenu>
                         </el-submenu>
 
-                        <el-menu-item index="3">场地管理</el-menu-item>
-                        <el-menu-item index="4">订单管理</el-menu-item>
+                        <el-menu-item index="3">订单管理</el-menu-item>
+                        <el-menu-item index="4">佣金设置</el-menu-item>
 
                         <el-submenu index="5">
                             <template slot="title">广告资讯管理</template>
@@ -70,7 +68,7 @@
             </el-row>
         </div>
         <!-- 右侧主内容区 -->
-        <div class="main-right">
+        <div class="main-right">11111
             <router-view>右侧的内容</router-view>
         </div>
     </main>
@@ -89,7 +87,7 @@ Vue.use(Element)
 
 
 export default {
-    name: 'app',
+    name: 'menu',
     data: function() {
         return {
             active: true,
@@ -141,6 +139,7 @@ body {
 
 
 
+
 /* 侧边栏 */
 
 .el-tree-node__content {
@@ -169,6 +168,7 @@ main .main-left {
 
 
 
+
 /* 滚动条样式 */
 
 ::-webkit-scrollbar {
@@ -183,6 +183,7 @@ main .main-left {
 ::-webkit-scrollbar-thumb {
     background-color: #bbb;
 }
+
 
 
 
@@ -202,7 +203,7 @@ main .main-left {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 20px;
     flex: 0 0 210px;
-    height: 775px;
+    height: 675px;
     /* height: 100%; */
     overflow-y: scroll;
     overflow-x: auto;

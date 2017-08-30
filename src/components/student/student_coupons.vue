@@ -2,8 +2,7 @@
   <div id="hello">
     <!-- 学员卡券明细-->
     <div class="choose_button">
-      <el-button size='mini'>
-        <a href="javascript:;" @click="backto"> 返 回 </a>
+      <el-button size='mini' @click="backto"> 返 回
       </el-button>
     </div>
     <!-- 查询 -->
@@ -17,7 +16,7 @@
         </span>
       </div>
       <el-form action="">
-        <el-col :span="6">
+        <el-col :span="8">
           <div class="grid-content bg-purple">
             <div class="block">
               <span class="demonstration">使用日期:</span>
@@ -65,7 +64,7 @@ Vue.use(Element)
 
 export default {
   name: 'hello',
-  created: function () {
+  created: function() {
   },
   created() {
   },
