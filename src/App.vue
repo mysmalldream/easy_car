@@ -30,18 +30,18 @@
                             </el-submenu>
                         </el-submenu>
 
-                        <el-menu-item index="3">场地管理</el-menu-item>
-                        <el-menu-item index="4">订单管理</el-menu-item>
+                        <el-menu-item index="area_manage">场地管理</el-menu-item>
+                        <el-menu-item index="order_manage">订单管理</el-menu-item>
 
                         <el-submenu index="5">
                             <template slot="title">广告资讯管理</template>
-                            <el-menu-item index="5-4-1">首页banner</el-menu-item>
-                            <el-menu-item index="5-4-2">学车指南</el-menu-item>
+                            <el-menu-item index="home_banner">首页banner</el-menu-item>
+                            <el-menu-item index="learncar_guide">学车指南</el-menu-item>
                         </el-submenu>
 
                         <el-submenu index="6">
                             <template slot="title">客服管理</template>
-                            <el-menu-item index="6-4-1">常见问题</el-menu-item>
+                            <el-menu-item index="common_question">常见问题</el-menu-item>
                             <el-menu-item index="6-4-2">在线反馈</el-menu-item>
                         </el-submenu>
 

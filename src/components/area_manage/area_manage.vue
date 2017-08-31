@@ -1,103 +1,72 @@
 <template>
   <div id="hello">
-    <!-- 考试发布 -->
-    <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane label="科目一" name="first">
-        <!-- 查询 -->
-        <div class="query">
-          <el-form action="">
-            <el-row>
-              <el-col :span="7">
-                <div class="grid-content bg-purple">
-                  <div class="block">
-                    <span class="demonstration">考试日期:</span>
-                    <el-date-picker v-model="value6" type="daterange" placeholder="请选择考试日期范围">
-                    </el-date-picker>
-                  </div>
-                </div>
-              </el-col>
-              <label>状态:
-                <el-select v-model="value" placeholder="请选择">
-                  <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                  </el-option>
-                </el-select>
-              </label>
-            </el-row>
-            <div class="choose">
-              <label>招录总数:
-                <el-input type="text" v-model="input1" placeholder="请输入招录总数"></el-input>
-              </label>
-              <label>预约人数:
-                <el-input type="text" v-model="input2" placeholder="请输入预约人数"></el-input>
-              </label>
-              <label>通关人数:
-                <el-input type="text" v-model="input3" placeholder="请输入通关人数"></el-input>
-              </label>
-              <el-button @click='query_button' type="primary">查询</el-button>
-            </div>
-          </el-form>
-          <!-- 添加删除按钮 -->
-          <el-row :gutter="20">
-            <el-col :span="12" :offset="20">
-              <div class="">
-                <el-button type="primary" size='small' icon="edit" @click="dialogCreateVisible = true">添加</el-button>
-                <el-button type="primary" size='small' icon="delete" :disabled="selected.length == 0" @click="del_all()">删除</el-button>
-              </div>
-            </el-col>
-          </el-row>
-           <!-- 添加按钮弹窗-->
-          <el-dialog title="考试发布" v-model="dialogCreateVisible" :close-on-click-modal="false" :close-on-press-escape="false" @close="reset" top=15% size='tiny'>
-            <div class="refuse">
-              <el-form id="#create" :model="create" :rules="rules" ref="create" label-width="50px">
-                <el-form-item label="日期 :">
-                  <el-date-picker v-model="value1" type="date" placeholder="请选择日期" :picker-options="pickerOptions0">
-                  </el-date-picker>
-                </el-form-item>
-                <el-form-item label="地点 :">
-                  <el-input v-model="formInline.user" placeholder="请输入地点"></el-input>
-                </el-form-item>
-                <el-form-item label="备注 :">
-                  <el-input resize=none type="textarea" :autosize="{ minRows:5, maxRows:13}" placeholder="请输入内容..." v-model="textarea">
-                  </el-input>
-                </el-form-item>
-              </el-form>
-              <div slot="footer" class="dialog-footer">
-                <el-button @click="dialogCreateVisible = false">取 消</el-button>
-                <el-button type="primary" :loading="createLoading" @click="createUser">确 定</el-button>
-              </div>
-            </div>
-          </el-dialog>
-          <!-- 表格 -->
-          <el-table ref="multipleTable" :data="tableData3" border tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
-            <el-table-column type="selection" width="55">
-            </el-table-column>
-            <el-table-column align='center' label="考试日期" min-width="70">
-              <template scope="scope">{{ scope.row.date }}</template>
-            </el-table-column>
-            <el-table-column prop="test_address" align='center' label="考试地点" min-width="180">
-            </el-table-column>
-            <el-table-column prop="order_number" align='center' label="预约人数" min-width="60" show-overflow-tooltip>
-            </el-table-column>
-            <el-table-column prop="status" align='center' label="状态" min-width="50" show-overflow-tooltip>
-            </el-table-column>
-            <el-table-column prop="pass_number" align='center' label="通关人数" min-width="60" show-overflow-tooltip>
-            </el-table-column>
-            <el-table-column prop="remark" align='center' label="备注" min-width="100" show-overflow-tooltip>
-            </el-table-column>
-
-            <el-table-column inline-template align='center' label="操作">
-              <span>
-                <el-button type="primary" size="small" @click="setCurrent(row)">修改</el-button>
-                <el-button type="danger" size="small" @click="removed(row)">删除</el-button>
-              </span>
-            </el-table-column>
-          </el-table>
+    <!-- 场地管理 -->
+    <!-- 查询 -->
+    <div class="query">
+      <el-form action="">
+        <div class="choose">
+          <label>场地名称:
+            <el-input type="text" v-model="input3" placeholder="请输入场地名称"></el-input>
+          </label>
+          <el-button @click='query_button' type="primary">查询</el-button>
         </div>
-      </el-tab-pane>
-      <el-tab-pane label="科目二" name="second">科目二</el-tab-pane>
-      <el-tab-pane label="科目三" name="third">科目三</el-tab-pane>
-      <el-tab-pane label="科目四" name="fourth">科目四</el-tab-pane>
-    </el-tabs>
+
+      </el-form>
+      <!-- 表格 -->
+      <el-row :gutter="20">
+        <el-col :span="4" :offset="20">
+          <div class="">
+            <el-button type="primary" @click="dialogFormVisible = true">添加</el-button>
+            <el-button type="primary" icon="delete" :disabled="selected.length == 0" @click="del_all()">删除</el-button>
+          </div>
+        </el-col>
+      </el-row>
+      <!-- 添加/修改弹窗-->
+      <el-dialog title="添加/修改" :visible.sync="dialogFormVisible" :show-close=true :before-close="ai_dialog_close1">
+        <div class="refuse">
+          <el-form :model="form">
+            <el-form-item label="场地名称 :" :label-width="formLabelWidth">
+              <el-input v-model="form.name" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="宣 传 语 :" :label-width="formLabelWidth">
+              <el-input v-model="form.xuanchuan" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item label=" 地 址  :" :label-width="formLabelWidth">
+              <el-button>坐标获取</el-button>
+            </el-form-item>
+          </el-form>
+          <div slot="footer" class="dialog-footer" custom-class="aaa">
+            <el-button @click="dialogFormVisible = false">取 消</el-button>
+            <el-button type="primary" @click="dialogFormVisible = false">添加</el-button>
+          </div>
+        </div>
+      </el-dialog>
+
+      <el-table ref="multipleTable" :data="tableData3" border tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
+        <el-table-column type="selection" width="55">
+        </el-table-column>
+        <el-table-column prop="area_name" align='center' label="场地名称" min-width="100">
+        </el-table-column>
+        <el-table-column prop="xuanchuanyu" align='center' label="宣传语" min-width="100" show-overflow-tooltip>
+        </el-table-column>
+        <el-table-column prop="address" align='center' label="地址" min-width="100" show-overflow-tooltip>
+        </el-table-column>
+        <el-table-column prop="coach" align='center' label="教练" min-width="50" show-overflow-tooltip>
+          <template scope="scope">
+            <el-button @click="handleClick" type="text" size="small">查看</el-button>
+          </template>
+        </el-table-column>
+
+        <el-table-column inline-template align='center' label="操作">
+          <span>
+            <el-button type="primary" size="small" @click="setCurrent(row)">修改</el-button>
+            <el-button type="danger" size="small" @click="removed(row)">删除</el-button>
+          </span>
+        </el-table-column>
+      </el-table>
+
+    </div>
+
   </div>
 </template>
 
@@ -112,28 +81,28 @@ export default {
   name: 'hello',
   data() {
     return {
-      textarea: '',    //备注框
+      dialogTableVisible: false,     //查看弹出框
+      dialogFormVisible: false,
+      formLabelWidth: '80px',
+      textarea: '',
+      form: {
+        name: '',
+        xuanchuan: '',
+      },
       tableData3: [{
-        date: '2016-05-02',
-        test_address: '上海市普陀区金沙江路 1518 弄',
-        order_number: '23',
-        status: '通过',
-        pass_number: '10',
-        remark: '这是备注信息'
+        area_name: '易学车驾校',
+        xuanchuanyu: '易学车就是好',
+        address: '上海市普陀区金沙江路 1518 弄',
       }, {
-        date: '2016-05-02',
-        test_address: '上海市普陀区金沙江路 1518 弄',
-        order_number: '23',
-        status: '通过',
-        pass_number: '10',
-        remark: '这是备注信息'
+        area_name: '易学车驾校',
+        xuanchuanyu: '易学车就是好',
+        address: '上海市普陀区金沙江路 1518 弄',
+      }, {
+        area_name: '易学车驾校',
+        xuanchuanyu: '易学车就是好',
+        address: '上海市普陀区金沙江路 1518 弄',
       }],
       multipleSelection: [],
-      pickerOptions0: {
-        disabledDate(time) {
-          return time.getTime() < Date.now() - 8.64e7;
-        }
-      },
       formInline: {
         user: '',
       },
@@ -195,6 +164,9 @@ export default {
     this.getUsers();
   },
   methods: {
+    ai_dialog_close1() {
+      this.dialogFormVisible = false;   //添加修改弹出框
+    },
     handleClick(tab, event) {
       console.log(tab, event);
     },
@@ -423,25 +395,17 @@ export default {
   margin-bottom: 15px;
 }
 
-.el-form--inline .el-form-item__label {
-  width: 0px;
-}
-
-.el-dialog__body {
-  padding-left: 0px;
-  padding-right: 50px;
-}
 
 .refuse .dialog-footer {
-  margin-top: 0px !important;
+  margin-top: 30px !important;
 }
 
 .refuse .dialog-footer .el-button--default {
-  margin-left: 60px !important;
+  margin-left: 150px !important;
 }
 
 .refuse .dialog-footer .el-button--primary {
-  margin-left: 130px;
+  margin-left: 180px;
 }
 </style>
 

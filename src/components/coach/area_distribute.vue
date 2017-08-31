@@ -14,7 +14,7 @@
     <el-row :gutter="20">
       <el-col :span="12" :offset="1">
         <div class="grid-content bg-purple">
-            <el-button @click="bind_unbind" type="primary" >绑定/解绑</el-button>
+          <el-button @click="bind_unbind" type="primary">绑定/解绑</el-button>
         </div>
       </el-col>
     </el-row>
@@ -46,7 +46,7 @@ export default {
     }
   },
   methods: {
-    bind_unbind(){
+    bind_unbind() {
       console.log("绑定和解绑按钮被点击了");
     }
   },
@@ -60,12 +60,15 @@ export default {
 #hello {
   margin: 20px 20px;
 }
-.el-button--primary{
+
+.el-button--primary {
   width: 215px;
 }
-.bg-purple[data-v-355b95cc]{
+
+.bg-purple[data-v-355b95cc] {
   background-color: #fff;
 }
+
 
 
 /* 默认的样式 */

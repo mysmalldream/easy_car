@@ -40,6 +40,11 @@ import coach_message from "./components/coach/coach_message.vue";//教练信息�
 import coach_details from "./components/coach/coach_details.vue";//教练个人信息详情
 import set_rank from "./components/coach/set_rank.vue";//设置教练级别
 import area_distribute from "./components/coach/area_distribute.vue";//场地分配
+import area_manage from "./components/area_manage/area_manage.vue";//场地管理
+import order_manage from "./components/order_manage/order_manage.vue";//场地管理
+import home_banner from "./components/ad_manage/home_banner.vue";//首页banner
+import learncar_guide from "./components/ad_manage/learncar_guide.vue";//学车指南
+import common_question from "./components/service_manage/common_question.vue";//常见问题
 
 
 
@@ -66,6 +71,11 @@ const router = new VueRouter({
     { path: "/coach_details", component:coach_details }, //教练个人信息详情
     { path: "/set_rank", component:set_rank }, //设置教练级别
     { path: "/area_distribute", component:area_distribute }, //场地分配
+    { path: "/area_manage", component:area_manage }, //场地管理
+    { path: "/order_manage", component:order_manage }, //场地管理
+    { path: "/home_banner", component:home_banner }, //首页banner
+    { path: "/learncar_guide", component:learncar_guide }, //学车指南
+    { path: "/common_question", component:common_question }, //常见问题
     
   ]
 })
