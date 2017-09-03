@@ -6,12 +6,6 @@
 			</div>
 			<div class="nav-right">
 				<ul>
-					<li class="hide-menu-li">
-						<!--<el-tooltip :content="value" placement="bottom">-->
-							<!--<el-switch on-text="" off-text="" @change="hideMenuAction" v-model="value" on-color="#1F2D3D" off-color="#8492A6" on-value="收起菜单" off-value="展开菜单">-->
-							<!--</el-switch>-->
-						<!--</el-tooltip>-->
-					</li>
 					<li>
 						<img :src="user.icon" />
 						<el-dropdown trigger="click">

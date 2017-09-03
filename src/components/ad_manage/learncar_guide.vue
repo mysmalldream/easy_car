@@ -390,7 +390,7 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-    margin: 20px 20px;
+    margin: 0px 20px;
 }
 
 .el-row {
@@ -413,10 +413,6 @@ img {
 .refuse .dialog-footer .el-button--primary {
     margin-left: 260px;
 }
-
-
-
-
 
 
 

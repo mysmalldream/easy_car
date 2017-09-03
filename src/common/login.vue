@@ -1,11 +1,11 @@
 <template>
-  <div id="hello">
+<!-- login页面 -->
+  <!-- <div id="hello"> -->
     <div class="login">
       <p>易学车后台管理系统</p>
       <el-row type="flex" class="row-bg" justify="space-around">
         <el-col :span="11">
           <div class="grid-content bg-purple-light">
-
             <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
 
               <el-form-item label=" 用 户 名 : " prop="name">
@@ -27,12 +27,11 @@
               </el-form-item>
 
             </el-form>
-
           </div>
         </el-col>
       </el-row>
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -43,7 +42,7 @@ import 'element-ui/lib/theme-default/index.css'
 Vue.use(Element)
 
 export default {
-  name: 'hello',
+  // name: 'hello',
   data() {
     var validatePass = (rule, value, callback) => {
     };
@@ -62,7 +61,7 @@ export default {
   },
   methods: {
     submitForm(formName) {
-      this.$router.push('/Index');
+      this.$router.push('/student_message');
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();

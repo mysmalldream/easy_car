@@ -407,7 +407,7 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 20px 20px;
+  margin: 0px 20px;
 }
 
 .choose .el-input {

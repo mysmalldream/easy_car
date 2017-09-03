@@ -14,7 +14,6 @@
           <el-col :span="6">
             <el-button type="primary" @click="onSubmit">查询</el-button>
           </el-col>
-          
           <el-col :span="6">
             <el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/" accept="video/*" :on-preview="handlePreview" :on-remove="handleRemove" :file-list="fileList2" list-type="picture" :multiple=true>
               <el-button type="primary">
@@ -78,7 +77,7 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 20px 20px;
+  margin: 0px 20px;
 }
 </style>
 

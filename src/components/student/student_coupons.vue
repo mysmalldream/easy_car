@@ -110,20 +110,11 @@ export default {
 /* 自定义的样式 */
 
 .query {
-  padding: 0px 0px 30px 0px;
-}
-
-.el-input {
-  width: 210px;
-}
-
-.block,
-.bg-purple[data-v-55a5009d] {
-  background-color: #fff;
+  padding: 0px 0px 10px 0px;
 }
 
 #hello {
-  margin: 0px 20px;
+  margin: 20px 20px;
 }
 
 .el-button--primary {
@@ -141,14 +132,4 @@ export default {
   margin-right: 70px;
 }
 
-.choose_button {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.choose_button button span a {
-  text-decoration: none;
-  color: gray;
-  padding: 5px 10px;
-}
 </style>

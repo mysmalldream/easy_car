@@ -113,22 +113,17 @@ export default {
 
 <style scoped>
 /* 自定义的样式 */
+#hello {
+  margin: 20px;
+}
 
 .query {
-  padding: 20px 20px 30px 20px;
-  margin-bottom: 30px;
+  padding: 0px 20px 50px 20px;
 }
 
 .el-input {
   width: 210px;
 }
 
-.block,
-.bg-purple[data-v-55a5009d] {
-  background-color: #fff;
-}
 
-#hello {
-  margin: 20px;
-}
 </style>

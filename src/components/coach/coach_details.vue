@@ -131,6 +131,7 @@ export default {
 
 .radio {
   margin-top: -30px;
+  margin-bottom: 10px;
 }
 
 .radio .radio1 {
@@ -145,14 +146,6 @@ export default {
 
 
 /* 默认的样式 */
-
-.el-row {
-  margin-bottom: 20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
 .el-col {
   border-radius: 4px;
 }

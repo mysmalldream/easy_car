@@ -172,27 +172,27 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 0px 20px;
+  margin: 20px 20px;
   width: 1100px !important;
 }
 
-.bg-purple[data-v-677f443f],
+/* .bg-purple[data-v-677f443f],
 .bg-purple-light[data-v-677f443f] {
   background: none;
-}
-
+} */
+/* 
 .block,
 .bg-purple[data-v-55a5009d] {
   background-color: #fff;
-}
+} */
 
 .el-table--fit {
   margin-top: 20px;
 }
 
-.query .el-row {
+/* .query .el-row {
   width: 1010px !important;
-}
+} */
 
 .query .choose .el-select {
   width: 100px;
@@ -211,19 +211,9 @@ export default {
   width: 120px;
 }
 
-.el-table {
-  width: 200% !important;
-}
-
 .el-button+.el-button {
   margin-left: 0px;
 }
-
-
-
-
-
-
 
 
 
@@ -231,34 +221,5 @@ export default {
 
 .el-row {
   margin-bottom: 20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.el-col {
-  border-radius: 4px;
-}
-
-.bg-purple-dark {
-  background: #99a9bf;
-}
-
-.bg-purple {
-  background: #d3dce6;
-}
-
-.bg-purple-light {
-  background: #e5e9f2;
-}
-
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
-}
-
-.row-bg {
-  padding: 10px 0;
-  background-color: #f9fafc;
 }
 </style>

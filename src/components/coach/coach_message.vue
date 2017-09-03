@@ -171,8 +171,7 @@ export default {
 /* 自定义的样式 */
 
 .query {
-  padding: 40px 20px 30px 20px;
-  margin-bottom: 30px;
+  padding: 0px 20px 50px 20px;
 }
 
 .el-input {
@@ -180,7 +179,7 @@ export default {
 }
 
 #hello {
-  margin: 0px 20px;
+  margin: 20px 20px;
 }
 
 .query .choose .el-select {

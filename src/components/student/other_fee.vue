@@ -97,23 +97,12 @@ export default {
 /* 自定义的样式 */
 
 .query {
-  padding: 40px 20px 30px 20px;
+  padding: 0px 20px 10px 20px;
 }
 
-.el-input {
-  width: 210px;
-}
-
-.block,
-.bg-purple[data-v-55a5009d] {
-  background-color: #fff;
-}
 
 #hello {
-  margin: 0px 20px;
+  margin: 20px 20px;
 }
 
-.el-button--primary {
-  margin-left: 40px;
-}
 </style>

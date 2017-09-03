@@ -5,8 +5,6 @@ import App from './App'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import Element from 'element-ui'
-// import {routeConfig} from './router-config'   //引入路由配置
-// import routeConfig from './router-config'
 import 'element-ui/lib/theme-default/index.css'
 
 
@@ -24,7 +22,6 @@ Vue.use(VueResource)
 // console.log(routeConfig);
 //导入各个路由模块
 import login from "./common/login.vue";//登录界面
-import Index from "./common/Index.vue";//默认的首页面
 import student_message from "./components/student/student_message.vue";//学员信息概览
 import student_manage from "./components/student/student_manage.vue";//审核管理
 import other_fee from "./components/student/other_fee.vue";//其他费用
@@ -45,6 +42,21 @@ import order_manage from "./components/order_manage/order_manage.vue";//场地�
 import home_banner from "./components/ad_manage/home_banner.vue";//首页banner
 import learncar_guide from "./components/ad_manage/learncar_guide.vue";//学车指南
 import common_question from "./components/service_manage/common_question.vue";//常见问题
+import online_call from "./components/service_manage/online_call.vue";//在线反馈
+
+import money_set from "./components/finance_mange/money_set.vue";//佣金设置
+import coach_cash from "./components/finance_mange/coach_cash.vue";//教练提现申请
+import coach_getmoney from "./components/finance_mange/coach_getmoney.vue";//教练收入
+import coach_income from "./components/finance_mange/coach_income.vue";//教练收入明细
+import student_cash from "./components/finance_mange/student_cash.vue";//学员提现申请
+import agent_finance from "./components/finance_mange/agent_finance.vue";//代理人财务
+import back_money from "./components/finance_mange/back_money.vue";//返佣明细
+import agenter_finance from "./components/finance_mange/agenter_finance.vue";//代理商财务
+import first_backmoney from "./components/finance_mange/first_backmoney.vue";//一级返佣明细
+import second_backmoney from "./components/finance_mange/second_backmoney.vue";//二级返佣明细
+
+import system_message from "./components/system_setting/system_message.vue";//系统消息列表
+
 
 
 
@@ -53,9 +65,8 @@ import common_question from "./components/service_manage/common_question.vue";//
 const router = new VueRouter({
   // routes: routeConfig,
   routes:[
-    { path: "/" }, //默认显示登录界面, redirect: '/login'
-    // { path: "/login", component:login }, //登录界面
-    { path: "/Index", component:Index }, //登录界面
+    { path: "/", redirect: '/login' }, //默认显示登录界面, redirect: '/login'
+    { path: "/login", component:login }, //登录界面
     { path: "/student_message", component:student_message }, //学员信息概览
     { path: "/student_manage", component:student_manage }, //审核管理
     { path: "/other_fee", component:other_fee }, //其他费用
@@ -76,6 +87,21 @@ const router = new VueRouter({
     { path: "/home_banner", component:home_banner }, //首页banner
     { path: "/learncar_guide", component:learncar_guide }, //学车指南
     { path: "/common_question", component:common_question }, //常见问题
+    { path: "/online_call", component:online_call }, //在线反馈
+
+    { path: "/money_set", component:money_set }, //佣金设置
+    { path: "/coach_cash", component:coach_cash }, //教练提现申请
+    { path: "/coach_getmoney", component:coach_getmoney }, //教练收入
+    { path: "/coach_income", component:coach_income }, //教练收入明细
+    { path: "/student_cash", component:student_cash }, //学员提现申请
+    { path: "/agent_finance", component:agent_finance }, //代理人财务
+    { path: "/back_money", component:back_money }, //返佣明细
+    { path: "/agenter_finance", component:agenter_finance }, //代理商财务
+    { path: "/first_backmoney", component:first_backmoney }, //一级返佣明细
+    { path: "/second_backmoney", component:second_backmoney }, //二级返佣明细
+
+    { path: "/system_message", component:system_message }, //系统消息列表
+    
     
   ]
 })
