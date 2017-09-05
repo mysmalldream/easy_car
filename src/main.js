@@ -56,6 +56,8 @@ import first_backmoney from "./components/finance_mange/first_backmoney.vue";//�
 import second_backmoney from "./components/finance_mange/second_backmoney.vue";//二级返佣明细
 
 import system_message from "./components/system_setting/system_message.vue";//系统消息列表
+import user_manage from "./components/system_setting/user_manage.vue";//用户管理
+import psw_reset from "./components/system_setting/psw_reset.vue";//密码重置
 
 
 
@@ -101,6 +103,8 @@ const router = new VueRouter({
     { path: "/second_backmoney", component:second_backmoney }, //二级返佣明细
 
     { path: "/system_message", component:system_message }, //系统消息列表
+    { path: "/user_manage", component:user_manage }, //用户管理
+    { path: "/psw_reset", component:psw_reset }, //密码重置
     
     
   ]

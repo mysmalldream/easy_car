@@ -46,7 +46,7 @@
             </el-col>
           </el-row>
            <!-- 添加按钮弹窗-->
-          <el-dialog title="考试发布" v-model="dialogCreateVisible" :close-on-click-modal="false" :close-on-press-escape="false" @close="reset" top=15% size='tiny'>
+          <el-dialog title="考试发布" v-model="dialogCreateVisible" :close-on-click-modal="false" :close-on-press-escape="false" @close="reset" top=15% size='tiny' custom-class='dialog_top'>
             <div class="refuse">
               <el-form id="#create" :model="create" :rules="rules" ref="create" label-width="50px">
                 <el-form-item label="日期 :">
@@ -409,7 +409,6 @@ export default {
 #hello {
   margin: 0px 20px;
 }
-
 .choose .el-input {
   width: 150px;
 }
@@ -437,11 +436,11 @@ export default {
 }
 
 .refuse .dialog-footer .el-button--default {
-  margin-left: 60px !important;
+  margin-left: 70px !important;
 }
 
 .refuse .dialog-footer .el-button--primary {
-  margin-left: 130px;
+  margin-left: 100px;
 }
 </style>
 

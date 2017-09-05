@@ -101,7 +101,7 @@
                             <el-submenu index="6">
                                 <template slot="title">系统设置</template>
                                 <el-menu-item index="system_message">系统消息列表</el-menu-item>
-                                <el-menu-item index="send_message">发送新消息</el-menu-item>
+                                <!-- <el-menu-item index="send_message">发送新消息</el-menu-item> -->
                                 <el-menu-item index="user_manage">用户管理</el-menu-item>
                                 <el-menu-item index="add_user">新增用户</el-menu-item>
                                 <el-menu-item index="psw_reset">密码重置</el-menu-item>
@@ -173,6 +173,21 @@ export default {
 
 <style >
 
+/* custom-class='dialog_top' */
+
+/* 各个页面的dialog顶部标题样式 */
+.dialog_top .el-dialog__header{
+  color:#fff;
+  background-color: #3598FE;
+  padding: 10px;  
+  text-align: center;
+}
+.dialog_top .el-dialog__header span{
+  color:#fff;
+  letter-spacing: 3px;
+  text-align: center;
+  
+}
 /* 导航栏菜单选中效果 */
 
 .isActive {

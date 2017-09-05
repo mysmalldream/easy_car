@@ -11,7 +11,8 @@
       <el-col :offset="8" :span="3">
         <div class="grid-content bg-purple">
           <el-button type="primary" @click="dialogFormVisible = true">审 核</el-button>
-          <el-dialog title="教 练 申 请 审 核" :visible.sync="dialogFormVisible" :show-close=false :before-close="ai_dialog_close1" size='tiny' custom-class='ceshi' top=20%>
+          <!-- 教练审核申请弹窗 -->
+          <el-dialog title="教 练 申 请 审 核" :visible.sync="dialogFormVisible" :show-close=false :before-close="ai_dialog_close1" size='tiny' custom-class='dialog_top' top=20% >
             <div class="radio">
               <el-radio class="radio1" v-model="radio" label="1">通过</el-radio>
               <el-radio class="radio1" v-model="radio" label="2">驳回</el-radio>
@@ -130,7 +131,7 @@ export default {
 }
 
 .radio {
-  margin-top: -30px;
+  margin-top: -15px;
   margin-bottom: 10px;
 }
 

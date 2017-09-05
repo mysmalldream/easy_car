@@ -22,7 +22,7 @@
         </el-col>
       </el-row>
       <!-- 添加/修改弹窗-->
-      <el-dialog title="添加/修改" :visible.sync="dialogFormVisible" :show-close=true :before-close="ai_dialog_close1">
+      <el-dialog title="添加/修改" :visible.sync="dialogFormVisible" :show-close=true :before-close="ai_dialog_close1" custom-class='dialog_top'>
         <div class="refuse">
           <el-form :model="form">
             <el-form-item label="场地名称 :" :label-width="formLabelWidth">

@@ -13,7 +13,7 @@
                     </el-col>
                 </el-row>
                 <!-- 添加按钮弹窗-->
-                <el-dialog title="添加" v-model="dialogCreateVisible" :close-on-click-modal="false" :close-on-press-escape="false" @close="reset" top=10% size='small'>
+                <el-dialog title="添加" v-model="dialogCreateVisible" :close-on-click-modal="false" :close-on-press-escape="false" @close="reset" top=10% size='mini' custom-class='dialog_top'>
                     <div class="refuse">
                         <el-form id="#create" :model="create" :rules="rules" ref="create" label-width="50px">
                             <el-form-item label="主题 :">
@@ -407,14 +407,13 @@ img {
 }
 
 .refuse .dialog-footer .el-button--default {
-    margin-left: 120px !important;
+    margin-left: 75px ;
 }
 
 .refuse .dialog-footer .el-button--primary {
-    margin-left: 260px;
+    margin-right: 75px;
+    margin-left: 90px ;
 }
-
-
 
 /* 表单上传图片的样式 */
 

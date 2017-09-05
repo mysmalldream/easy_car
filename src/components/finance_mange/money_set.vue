@@ -2,14 +2,14 @@
   <div id="hello">
     <!-- 佣金设置 -->
     <div class="query">
-      <!-- 表格 -->
+      <!-- 新增按钮 -->
       <el-row :gutter="20">
         <el-col :span="2" :offset="22">
           <el-button type="primary" size='small' icon="edit" @click="dialogFormVisible = true">新增</el-button>
         </el-col>
       </el-row>
       <!-- 新增/修改弹窗-->
-      <el-dialog title="新增/修改" :visible.sync="dialogFormVisible" :show-close=true :before-close="ai_dialog_close1" size='tiny'>
+      <el-dialog title="新增/修改" :visible.sync="dialogFormVisible" :show-close=true :before-close="ai_dialog_close1" size='tiny' custom-class='dialog_top' >
         <div class="refuse">
           <el-form :model="form">
             <el-form-item label="主 题 :" :label-width="formLabelWidth">
@@ -31,6 +31,7 @@
           </div>
         </div>
       </el-dialog>
+      <!-- 表格 -->
       <el-table ref="multipleTable" :data="tableData3" border tooltip-effect="dark" style="width: 100%">
         <el-table-column prop="topic" align='center' label="主题" min-width="100">
         </el-table-column>

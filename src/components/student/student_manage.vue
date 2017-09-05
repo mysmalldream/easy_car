@@ -69,13 +69,12 @@
       </el-table-column>
       <el-table-column align='center' prop="target" label="申请目标" min-width="100">
       </el-table-column>
-
       <el-table-column align='center' prop="excuse" label="申请理由" min-width="100">
         <template scope="scope">
 
           <el-button type="text" @click="dialogTableVisible = true">查看</el-button>
-          <el-dialog title="申请代理人/代理商" :visible.sync="dialogTableVisible" :before-close="ai_dialog_close" size='tiny' top=7%>
-
+          <!-- 申请代理人/代理商弹窗 -->
+          <el-dialog title="申请代理人/代理商" :visible.sync="dialogTableVisible" :before-close="ai_dialog_close" size='tiny' top=7% custom-class='dialog_top'>
             <ul class="student_details">
               <li> 账号：13002918015</li>
               <li> 姓名：薛宝钗</li>
@@ -87,11 +86,10 @@
               <li> 反：<img src='../../../static/imgs/test.jpg'></img>
               </li>
             </ul>
-
           </el-dialog>
+          
         </template>
       </el-table-column>
-
       <el-table-column align='center' prop="datas" label="审核日期" min-width="100">
       </el-table-column>
       <el-table-column align='center' prop="person" label="审批人" min-width="100">
@@ -104,7 +102,7 @@
 
           <el-button type="text" @click="dialogFormVisible = true" size="small">驳回</el-button>
 
-          <el-dialog title="驳 回 理 由" :visible.sync="dialogFormVisible" :show-close=false :before-close="ai_dialog_close1" size='tiny' custom-class='ceshi' top=20%>
+          <el-dialog title="驳 回 理 由" :visible.sync="dialogFormVisible" :before-close="ai_dialog_close1" size='tiny' custom-class='dialog_top' top=20%>
             <div class="refuse">
               <el-input resize=none type="textarea" :autosize="{ minRows: 12, maxRows: 6}" placeholder="请输入内容..." v-model="textarea">
               </el-input>
@@ -116,7 +114,8 @@
           </el-dialog>
 
           <el-button type="text" @click="excuse = true" size='small'>查看理由</el-button>
-          <el-dialog title="查看理由" :visible.sync="excuse" :before-close="ai_dialog_close2" size='tiny' top=30%>
+          <!-- 查看理由弹窗 -->
+          <el-dialog title="查看理由" :visible.sync="excuse" custom-class='dialog_top' :before-close="ai_dialog_close2" size='tiny' top=20%>
             <span>测试数据查看理由 测试数据查看理由 测试数据查看理由 测试数据查看理由</span>
           </el-dialog>
 
@@ -275,8 +274,6 @@ li:nth-of-type(7)>img {
 .refuse .dialog-footer .el-button--primary {
   margin-left: 60px;
 }
-
-
 
 
 
