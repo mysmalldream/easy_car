@@ -21,7 +21,6 @@
               </el-button>
             </el-upload>
           </el-col>
-
           <el-col :span="6">
             <el-button type="" icon="delete">删除</el-button>
           </el-col>
@@ -79,6 +78,10 @@ export default {
 
 #hello {
   margin: 0px 20px;
+  margin-top:60px;
+}
+.el-tabs{
+  width:1100px;
 }
 </style>
 

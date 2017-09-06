@@ -2,57 +2,51 @@
   <div id="hello">
     <!-- 课程报名管理 -->
     <!-- 查询 -->
-    <div class="query">
-      <el-form action="">
-        <el-row>
-          <el-col :span="8">
-            <div class="grid-content bg-purple">
-              <div class="block">
-                <span class="demonstration">报名日期:</span>
-                <el-date-picker v-model="value6" type="daterange" placeholder="请选择报名日期范围">
-                </el-date-picker>
-              </div>
+    <el-form action="" :inline="true">
+      <el-row :gutter="20">
+        <el-col :span="8">
+          <div class="grid-content bg-purple">
+            <div class="block">
+              <span class="demonstration">报名日期:</span>
+              <el-date-picker v-model="value6" type="daterange" placeholder="请选择报名日期范围">
+              </el-date-picker>
             </div>
-          </el-col>
-        </el-row>
-
-        <div class="choose">
-          <label>姓名:
-            <el-input type="text" v-model="input1" placeholder="请输入您的姓名"></el-input>
-          </label>
-          <label>电话:
-            <el-input type="text" v-model="input2" placeholder="请输入您的电话"></el-input>
-          </label>
-          <label>代理人:
-            <el-select v-model="value" placeholder="请选择">
-              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-              </el-option>
-            </el-select>
-          </label>
-          <label>报名套餐:
-            <el-select v-model="value1" placeholder="请选择">
-              <el-option v-for="item in options1" :key="item.value1" :label="item.label" :value="item.value1">
-              </el-option>
-            </el-select>
-          </label>
-          <el-button @click="onSubmit" type="primary">查询</el-button>
-        </div>
-
-      </el-form>
-    </div>
+          </div>
+        </el-col>
+      </el-row>
+      <el-form-item label="姓名:">
+        <el-input type="text" v-model="input1" placeholder="请输入您的姓名"></el-input>
+      </el-form-item>
+      <el-form-item label="电话:">
+        <el-input type="text" v-model="input2" placeholder="请输入您的电话"></el-input>
+      </el-form-item>
+      <el-form-item label="代理商:">
+        <el-select v-model="value" placeholder="请选择">
+          <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="报名套餐:">
+        <el-select v-model="value1" placeholder="请选择">
+          <el-option v-for="item in options1" :key="item.value1" :label="item.label" :value="item.value1">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-button @click="onSubmit" type="primary">查询</el-button>
+    </el-form>
     <!-- 数据表格 -->
     <el-table :data="tableData" border style="width: 100%" :stripe='true'>
       <el-table-column align='center' prop="num" label="序号" min-width="50">
       </el-table-column>
       <el-table-column align='center' prop="name" label="姓名" min-width="80">
       </el-table-column>
-      <el-table-column align='center' prop="idcard" label="身份证号" min-width="140">
+      <el-table-column align='center' prop="idcard" label="身份证号" min-width="160">
       </el-table-column>
-      <el-table-column align='center' prop="phone" label="电话" min-width="100">
+      <el-table-column align='center' prop="phone" label="电话" min-width="120">
       </el-table-column>
       <el-table-column align='center' prop="meal" label="报名套餐" min-width="100">
       </el-table-column>
-      <el-table-column align='center' prop="money" label="预付金额" min-width="70">
+      <el-table-column align='center' prop="money" label="预付金额" min-width="80">
       </el-table-column>
       <el-table-column align='center' prop="pay" label="支付方式" min-width="100">
       </el-table-column>
@@ -153,43 +147,23 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 20px 20px;
+  margin: 70px 20px;
+  width: 1100px !important;
 }
 
-
-.block,
-.bg-purple[data-v-55a5009d] {
-  background-color: #fff;
-}
-
-.el-table--fit {
-  margin-top: 20px;
-}
-
-.query .el-row {
-  width: 1010px !important;
-}
-
-.query .choose .el-select {
+.el-select {
   width: 130px;
-  margin-right: 20px;
 }
 
-.query .choose .el-button {
-  margin-left: 25px;
+.el-button {
+  margin-left: 20px;
 }
 
-.choose .el-input {
-  width: 150px;
+.el-input {
+  width: 210px;
 }
-
-
-
-
-/* 默认的样式 */
 
 .el-row {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
-
 </style>

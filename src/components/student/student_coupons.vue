@@ -110,7 +110,8 @@ export default {
 /* 自定义的样式 */
 
 .query {
-  padding: 0px 0px 10px 0px;
+  padding: 20px 0px 10px 0px;
+  width: 900px;
 }
 
 #hello {

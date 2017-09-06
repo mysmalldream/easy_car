@@ -401,12 +401,12 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-    margin: 0px 20px;
+    margin: 55px 20px;
 }
 
 .el-row {
     margin-top: 0px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 img {

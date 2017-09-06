@@ -48,7 +48,7 @@ export default {
 /* 自定义样式 */
 
 #hello {
-    margin: 20px 20px;
+    margin: 70px 20px;
 }
 .add{
     padding-left: 0px;

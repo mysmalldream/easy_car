@@ -3,7 +3,7 @@
   <!-- <div id="hello"> -->
     <div class="login">
       <p>易学车后台管理系统</p>
-      <el-row type="flex" class="row-bg" justify="space-around">
+      <!-- <el-row type="flex" class="row-bg" justify="space-around">
         <el-col :span="11">
           <div class="grid-content bg-purple-light">
             <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
@@ -21,7 +21,6 @@
               </el-form-item>
 
               <el-form-item>
-                <!-- <el-button type="primary" @click="submitForm('ruleForm2')">登录</el-button> -->
                 <el-button type="primary" @click="submitForm">登录</el-button>
                 <el-button @click="resetForm('ruleForm2')">重置</el-button>
               </el-form-item>
@@ -29,7 +28,7 @@
             </el-form>
           </div>
         </el-col>
-      </el-row>
+      </el-row> -->
     </div>
   <!-- </div> -->
 </template>
@@ -75,6 +74,9 @@ export default {
 #app main .main-left {
   display: none !important;
 }
+ .main-right {
+  width:100% !important;
+}
 
 .login {
   background-color: #999999;
@@ -85,7 +87,7 @@ export default {
   font-size: 35px;
   letter-spacing: 5px;
   background-color: #999;
-  margin-top: 0px;
+  margin-top: 50px;
   padding-top: 30px;
   color: #fff;
 }
@@ -117,12 +119,12 @@ export default {
 
 /* 默认的样式 */
 
-.el-row {
+/* .el-row {
   margin-bottom: 20px;
   &:last-child {
     margin-bottom: 0;
   }
-}
+} */
 
 .el-col {
   border-radius: 4px;

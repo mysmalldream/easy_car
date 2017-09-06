@@ -2,9 +2,9 @@
   <div id="hello">
     <!-- 代理详情-->
     <!-- 查询 -->
-    <div class="query">
-      <el-form action="">
-        <el-col :span="7">
+    <el-form action="" :inline="true">
+      <el-row :gutter="20">
+        <el-col :span="6">
           <div class="grid-content bg-purple">
             <div class="block">
               <span class="demonstration">注册日期:</span>
@@ -16,39 +16,35 @@
         <el-col :span="6">
           <div class="grid-content bg-purple">
             <div class="block">
-              <label>账号:
+              <el-form-item label="账号:">
                 <el-input size="small2" placeholder="请输入您的账号" v-model="input1">
                 </el-input>
-              </label>
+              </el-form-item>
             </div>
           </div>
         </el-col>
         <el-col :span="6">
           <div class="grid-content bg-purple">
             <div class="block">
-
-              <label>姓名:
+              <el-form-item label="姓名:">
                 <el-input size="small2" placeholder="请输入您的姓名" v-model="input2">
                 </el-input>
-              </label>
+              </el-form-item>
             </div>
-
           </div>
         </el-col>
-        <el-col :span="4">
+        <el-col :span="2">
           <div class="grid-content bg-purple">
             <div class="block">
-
               <el-button type="primary">查询</el-button>
             </div>
           </div>
 
         </el-col>
-
-      </el-form>
-    </div>
+      </el-row>
+    </el-form>
     <!-- 数据表格 -->
-    <el-table :data="tableData" border style="width: 79%" :stripe='true'>
+    <el-table :data="tableData" border style="width: 90%" :stripe='true'>
       <el-table-column align='center' prop="num" label="序号" min-width="50">
       </el-table-column>
       <el-table-column align='center' prop="name" label="姓名" min-width="70">
@@ -60,7 +56,6 @@
       <el-table-column align='center' prop="target" label="关系" min-width="100">
       </el-table-column>
     </el-table>
-
   </div>
 </template>
 
@@ -113,17 +108,13 @@ export default {
 
 <style scoped>
 /* 自定义的样式 */
-#hello {
-  margin: 20px;
-}
 
-.query {
-  padding: 0px 20px 50px 20px;
+#hello {
+  margin: 70px 20px;
+  width: 1100px;
 }
 
 .el-input {
-  width: 210px;
+  width: 180px;
 }
-
-
 </style>

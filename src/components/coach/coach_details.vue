@@ -2,17 +2,17 @@
   <div id="hello">
     <!-- 教练个人详情页面 -->
     <el-row :gutter="20">
-      <el-col :span="4">
+      <el-col :span="6">
         <div class="grid-content bg-purple">状态：待审核</div>
       </el-col>
-      <el-col :span="5">
+      <el-col :span="6">
         <div class="grid-content bg-purple">申请时间2017-08-08</div>
       </el-col>
-      <el-col :offset="8" :span="3">
+      <el-col  :span="3">
         <div class="grid-content bg-purple">
           <el-button type="primary" @click="dialogFormVisible = true">审 核</el-button>
           <!-- 教练审核申请弹窗 -->
-          <el-dialog title="教 练 申 请 审 核" :visible.sync="dialogFormVisible" :show-close=false :before-close="ai_dialog_close1" size='tiny' custom-class='dialog_top' top=20% >
+          <el-dialog title="教 练 申 请 审 核" :visible.sync="dialogFormVisible" :show-close=false :before-close="ai_dialog_close1" size='tiny' custom-class='dialog_top' top=20%>
             <div class="radio">
               <el-radio class="radio1" v-model="radio" label="1">通过</el-radio>
               <el-radio class="radio1" v-model="radio" label="2">驳回</el-radio>
@@ -28,7 +28,7 @@
           </el-dialog>
         </div>
       </el-col>
-      <el-col :span="1">
+      <el-col :span="6">
         <div class="grid-content bg-purple">
           <el-button @click="backto"> 返 回
           </el-button>
@@ -101,6 +101,8 @@ export default {
 
 #hello {
   margin: 20px 20px;
+  margin-top: 70px;
+  width: 900px;
 }
 
 .student_details {
@@ -145,9 +147,9 @@ export default {
 
 
 
-
 /* 默认的样式 */
-.el-col {
+
+/* .el-col {
   border-radius: 4px;
 }
 
@@ -173,5 +175,5 @@ export default {
 .row-bg {
   padding: 10px 0;
   background-color: #f9fafc;
-}
+} */
 </style>

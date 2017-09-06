@@ -379,7 +379,7 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 20px 20px;
+  margin: 70px 20px;
 }
 
 .choose .el-input {
@@ -391,10 +391,8 @@ export default {
 }
 
 .el-row {
-  margin-top: 0px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
-
 
 .refuse .dialog-footer {
   margin-top: 30px !important;

@@ -2,23 +2,22 @@
   <div id="hello">
     <!-- 返佣明细 -->
     <!-- 时间 -->
-    <div class="query">
-      <el-form :inline="true" class="demo-form-inline">
-        <el-row :gutter="10">
-          <el-col :span="6">
-            <el-form-item label="账号:">
-              <el-input v-model="input1" placeholder="请输入您的账号"></el-input>
-            </el-form-item>
-          </el-col>
-          <el-col :span="6">
-            <el-form-item label="姓名:">
-              <el-input type="text" v-model="input2" placeholder="请输入您的姓名"></el-input>
-            </el-form-item>
-            </label>
-          </el-col>
-        </el-row>
-      </el-form>
-    </div>
+    <el-form :inline="true" class="demo-form-inline">
+      <el-row :gutter="10">
+        <el-col :span="6">
+          <el-form-item label="账号:">
+            <el-input placeholder="请输入您的账号"></el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :span="6">
+          <el-form-item label="姓名:">
+            <el-input type="text" v-model="input2" placeholder="请输入您的姓名"></el-input>
+          </el-form-item>
+          </label>
+        </el-col>
+        <el-button type="primary">查询</el-button>
+      </el-row>
+    </el-form>
     <!-- 数据表格 -->
     <el-table :data="tableData" border style="width: 100%" :stripe='true'>
       <el-table-column align='center' prop="num" label="序号" min-width="70">
@@ -69,11 +68,10 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 20px 20px;
+  margin: 70px 20px;
 }
 
 .el-date-editor.el-input {
   width: 120px;
 }
-
 </style>

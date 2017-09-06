@@ -172,45 +172,46 @@ export default {
 </script>
 
 <style >
-
-/* custom-class='dialog_top' */
-
 /* 各个页面的dialog顶部标题样式 */
-.dialog_top .el-dialog__header{
-  color:#fff;
-  background-color: #3598FE;
-  padding: 10px;  
-  text-align: center;
+
+.dialog_top .el-dialog__header {
+    color: #fff;
+    background-color: #3598FE;
+    padding: 10px;
+    text-align: center;
 }
-.dialog_top .el-dialog__header span{
-  color:#fff;
-  letter-spacing: 3px;
-  text-align: center;
-  
+
+.dialog_top .el-dialog__header span {
+    color: #fff;
+    letter-spacing: 3px;
+    text-align: center;
 }
+
+
+
 /* 导航栏菜单选中效果 */
 
 .isActive {
-  color: #20a0ff!important;
+    color: #20a0ff!important;
 }
 
 #app main .aside .is-active {
-  color: #475669;
+    color: #475669;
+}
+
+#hello {
+    width: 1100px;
 }
 
 
-/* 卡片 */
-
-.el-card {
-  overflow: visible!important;
-}
 /* 顶部样式 */
 
 header {
-    background-color: #324157;
-    min-width: 1200px;
+    min-width: 100%;
     height: 60px;
     background-color: #3C8DBC;
+    position: fixed;
+    z-index: 1000;
 }
 
 .nav-left {
@@ -255,7 +256,6 @@ header {
 }
 
 
-
 /* 页面初始化 */
 
 body {
@@ -280,28 +280,24 @@ body {
 }
 
 main .main-right {
-    padding: 0px !important;
+    margin-left: 210px;
+    width: 100%;
 }
 
 main .main-left {
     background-color: #324057 !important;
 }
 
-.el-row {
-    margin-top: 20px;
-}
-
 .el-menu-item,
 .el-submenu__title {
-    height: 30px !important;
-    line-height: 30px !important;
+    height: 33px !important;
+    line-height: 33px !important;
 }
-
 
 
 /* 滚动条样式 */
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 5px;
     height: 10px;
 }
@@ -312,7 +308,7 @@ main .main-left {
 
 ::-webkit-scrollbar-thumb {
     background-color: #bbb;
-}
+} */
 
 
 
@@ -329,20 +325,17 @@ main {
 
 main .main-left {
     text-align: center;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 20px;
     flex: 0 0 210px;
-    height: 775px;
-    overflow-y: scroll;
-    overflow-x: auto;
-    padding-top: 20px;
+    width: 210px;
+    padding-top: 70px;
+    position: fixed;
+    height: 100%;
 }
 
 main .main-right {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+    flex: 5;
     background-color: #fff;
+    /* position: fixed; */
 }
 
 main .el-menu {
@@ -351,9 +344,5 @@ main .el-menu {
 
 .el-menu--dark {
     text-align: left;
-}
-
-.el-row {
-    margin-top: 0px;
 }
 </style>

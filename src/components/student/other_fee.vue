@@ -4,7 +4,7 @@
     <!-- 日期 -->
     <div class="query">
       <el-form action="">
-        <el-col :span="6">
+        <el-col :span="7">
           <div class="grid-content bg-purple">
             <div class="block">
               <span class="demonstration">时间:</span>
@@ -21,8 +21,8 @@
               </el-option>
             </el-select>
           </label>
+          <el-button type="primary">查询</el-button>
         </div>
-
       </el-form>
     </div>
     <!-- 数据表格 -->
@@ -53,7 +53,7 @@ Vue.use(Element)
 
 export default {
   name: 'hello',
-  created: function () {
+  created: function() {
     // this.$router.push('/activePublic');
     //  this.$router.push('/student_details')  //将你的跳转写在这里。
   },
@@ -97,12 +97,12 @@ export default {
 /* 自定义的样式 */
 
 .query {
-  padding: 0px 20px 10px 20px;
+  padding: 50px 20px 10px 20px;
+  width: 1000px;
 }
 
 
 #hello {
   margin: 20px 20px;
 }
-
 </style>

@@ -206,7 +206,7 @@ export default {
 /* 自定义的样式 */
 
   #hello {
-    margin: 20px 20px;
+    margin: 70px 20px;
   }
   .el-dialog__title{
     text-align: center !important;

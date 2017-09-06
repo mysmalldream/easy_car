@@ -7,7 +7,7 @@
         <el-col :span="4">
           <div class="grid-content bg-purple">
             <label>账号:
-              <el-input  size="small2" placeholder="请输入您的账号" v-model="input1">
+              <el-input size="small2" placeholder="请输入您的账号" v-model="input1">
               </el-input>
             </label>
           </div>
@@ -20,7 +20,6 @@
             </label>
           </div>
         </el-col>
-
         <div class="choose">
           <el-col :span="5">
             <label>身份等级:
@@ -40,13 +39,11 @@
             </label>
           </el-col>
         </div>
-
         <el-col :span="1">
           <div class="grid-content bg-purple">
             <el-button type="primary">查询</el-button>
           </div>
         </el-col>
-
       </el-form>
     </div>
     <!-- 数据表格 -->
@@ -78,7 +75,7 @@
         </template>
       </el-table-column>
 
-      <el-table-column align='center' label="操作" min-width="170">
+      <el-table-column align='center' label="操作" min-width="100">
         <template scope="scope">
           <el-button @click="person_detail" type="primary" size="mini">个人详情</el-button>
           <el-button @click="agent_detail" type="primary" size="mini">代理详情</el-button>
@@ -188,22 +185,25 @@ export default {
 
 <style scoped>
 /* 自定义的样式 */
+#hello {
+  margin: 20px 20px;
+  width: 1100px;
+}
 
 .query {
-  padding: 0px 20px 50px 20px;
+  padding-top: 60px;
+  padding-bottom: 50px;
 }
 
 .el-input {
   width: 130px;
 }
 
-#hello {
-  margin: 20px 20px;
-}
-
 .query .choose .el-select {
   width: 110px;
 }
 
-
+.el-button+.el-button {
+  margin-left: 0px;
+}
 </style>

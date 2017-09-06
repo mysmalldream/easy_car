@@ -45,7 +45,7 @@
               </div>
             </el-col>
           </el-row>
-           <!-- 添加按钮弹窗-->
+          <!-- 添加按钮弹窗-->
           <el-dialog title="考试发布" v-model="dialogCreateVisible" :close-on-click-modal="false" :close-on-press-escape="false" @close="reset" top=15% size='tiny' custom-class='dialog_top'>
             <div class="refuse">
               <el-form id="#create" :model="create" :rules="rules" ref="create" label-width="50px">
@@ -85,7 +85,7 @@
             <el-table-column prop="remark" align='center' label="备注" min-width="100" show-overflow-tooltip>
             </el-table-column>
 
-            <el-table-column inline-template align='center' label="操作">
+            <el-table-column inline-template align='center' label="操作" min-width="100">
               <span>
                 <el-button type="primary" size="small" @click="setCurrent(row)">修改</el-button>
                 <el-button type="danger" size="small" @click="removed(row)">删除</el-button>
@@ -152,7 +152,8 @@ export default {
         value: '选项2',
         label: '结束'
       }],
-      url: 'http://172.10.0.201/api/v1/accounts', //此处填写接口地址
+      // url: 'http://172.10.0.201/api/v1/accounts', //此处填写接口地址
+      url: 'http://211.149.193.19:8080/api/customers', //此处填写接口地址
       users: [],
       keywords: '',
       select: '',
@@ -407,8 +408,11 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 0px 20px;
+  margin: 60px 0px;
+  margin-left: 20px;
+  width: 1080px;
 }
+
 .choose .el-input {
   width: 150px;
 }
@@ -418,8 +422,8 @@ export default {
 }
 
 .el-row {
-  margin-top: 0px;
-  margin-bottom: 15px;
+  margin-top: 0px !important;
+  margin-bottom: 5px;
 }
 
 .el-form--inline .el-form-item__label {

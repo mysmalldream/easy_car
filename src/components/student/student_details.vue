@@ -51,7 +51,7 @@ export default {
 
 <style scoped>
 #hello {
-  margin: 20px 20px;
+  margin: 70px 20px;
 }
 
 .student_details {

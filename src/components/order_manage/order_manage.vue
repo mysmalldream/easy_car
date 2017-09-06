@@ -172,27 +172,12 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 20px 20px;
-  width: 1100px !important;
+  margin: 70px 20px;
 }
-
-/* .bg-purple[data-v-677f443f],
-.bg-purple-light[data-v-677f443f] {
-  background: none;
-} */
-/* 
-.block,
-.bg-purple[data-v-55a5009d] {
-  background-color: #fff;
-} */
 
 .el-table--fit {
   margin-top: 20px;
 }
-
-/* .query .el-row {
-  width: 1010px !important;
-} */
 
 .query .choose .el-select {
   width: 100px;

@@ -118,11 +118,11 @@ export default {
 /* 自定义的样式 */
 
 .query {
-  padding: 0px 20px 50px 20px;
+  padding: 50px 20px 50px 20px;
 }
 
 .el-input {
-  width: 130px;
+  width: 160px;
 }
 
 #hello {
@@ -132,6 +132,4 @@ export default {
 .query .choose .el-select {
   width: 110px;
 }
-
-
 </style>

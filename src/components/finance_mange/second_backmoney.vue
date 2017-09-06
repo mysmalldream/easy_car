@@ -1,40 +1,42 @@
 <template>
   <div id="hello">
     <!-- 二级返佣明细 -->
-    <!-- 查询 -->
-    <div class="query">
-      <el-form :inline="true" action="">
+    <el-form :inline="true" action="">
+      <el-row :gutter="1">
         <el-col :span="5">
           <div class="grid-content bg-purple">
-            <label>账号:
+            <el-form-item label="账号:">
               <el-input size="small2" placeholder="请输入您的账号" v-model="input1">
               </el-input>
-            </label>
+            </el-form-item>
           </div>
         </el-col>
         <el-col :span="5">
           <div class="grid-content bg-purple">
-            <label>姓名:
+            <el-form-item label="姓名:">
               <el-input size="small2" placeholder="请输入您的姓名" v-model="input2">
               </el-input>
-            </label>
+            </el-form-item>
           </div>
         </el-col>
-        <el-col :span="3">
-          <div class="grid-content bg-purple">
-            <el-button type="primary" @click="click_button">查询</el-button>
-          </div>
+        <el-col :span="5">
+          <el-form-item label="级别:">
+            <el-select v-model="value" placeholder="请选择">
+              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              </el-option>
+            </el-select>
+          </el-form-item>
         </el-col>
-
-      </el-form>
-    </div>
+        <el-button type="primary">查询</el-button>
+      </el-row>
+    </el-form>
     <!-- 数据表格 -->
     <el-table :data="tableData" border style="width: 100%" :stripe='true'>
       <el-table-column align='center' prop="num" label="序号" min-width="50">
       </el-table-column>
       <el-table-column align='center' prop="account" label="代理人账号" min-width="80">
       </el-table-column>
-       <el-table-column align='center' prop="name" label="姓名" min-width="100">
+      <el-table-column align='center' prop="name" label="姓名" min-width="100">
       </el-table-column>
       <el-table-column align='center' prop="consume" label="学员总消费" min-width="80">
       </el-table-column>
@@ -67,6 +69,8 @@ export default {
     return {
       input1: '',
       input2: '',
+      value:'',
+      options:[],
       tableData: [{
         num: '1',
         account: '18609281213',
@@ -82,17 +86,19 @@ export default {
 <style scoped>
 /* 自定义的样式 */
 
-.query {
-  padding: 0px 20px 50px 20px;
+#hello {
+  margin: 70px 20px;
 }
 
 .el-input {
   width: 130px;
 }
 
-#hello {
-  margin: 20px 20px;
+.el-row {
+  margin-bottom: -10px;
 }
 
-
+.el-select {
+  width: 110px;
+}
 </style>

@@ -11,9 +11,7 @@
                 <span class="demonstration">消费时间:</span>
                 <el-date-picker v-model="value3" type="date" placeholder="消费日期">
                 </el-date-picker> ---
-                <el-time-picker v-model="value4" :picker-options="{
-                          selectableRange: '00:00:00 - 23:00:00'
-                        }" placeholder="消费时间">
+                <el-time-picker v-model="value4" :picker-options="{selectableRange: '00:00:00 - 23:00:00'}" placeholder="消费时间">
                 </el-time-picker>
               </div>
             </div>
@@ -29,6 +27,7 @@
             </el-form-item>
             </label>
           </el-col>
+          <el-button type="primary">查询</el-button>
         </el-row>
       </el-form>
     </div>
@@ -84,11 +83,13 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 20px 20px;
+  margin: 70px 20px;
 }
 
 .el-date-editor.el-input {
   width: 120px;
 }
-
+.el-row{
+  margin-bottom: -15px;
+}
 </style>

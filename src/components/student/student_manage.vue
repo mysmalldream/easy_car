@@ -2,61 +2,55 @@
   <div id="hello">
     <!-- 审核管理 -->
     <!-- 查询 -->
-    <div class="query">
-      <el-form :inline="true" action="">
-        <el-row>
-          <el-col :span="8">
-            <div class="grid-content bg-purple">
-              <div class="block">
-                <span class="demonstration">申请日期:</span>
-                <el-date-picker v-model="value6" type="daterange" placeholder="请选择申请日期范围">
-                </el-date-picker>
-              </div>
+    <el-form :inline="true" action="">
+      <el-row :gutter="20">
+        <el-col :span="7">
+          <div class="grid-content bg-purple">
+            <div class="block">
+              <span class="demonstration">申请日期:</span>
+              <el-date-picker v-model="value6" type="daterange" placeholder="请选择申请日期范围">
+              </el-date-picker>
             </div>
-          </el-col>
-          <el-col :span="8">
-            <div class="grid-content bg-purple-light">
-              <div class="block">
-                <span class="demonstration">审核日期:</span>
-                <el-date-picker v-model="value7" type="daterange" placeholder="请选择审核日期范围">
-                </el-date-picker>
-              </div>
+          </div>
+        </el-col>
+        <el-col :span="7">
+          <div class="grid-content bg-purple-light">
+            <div class="block">
+              <span class="demonstration">审核日期:</span>
+              <el-date-picker v-model="value7" type="daterange" placeholder="请选择审核日期范围">
+              </el-date-picker>
             </div>
-          </el-col>
-        </el-row>
-
-        <div class="choose">
-          <el-form-item label="账号">
-            <el-input size="small2" placeholder="请输入您的账号" v-model="input1">
-            </el-input>
-          </el-form-item>
-          <el-form-item label="姓名">
-            <el-input size="small2" placeholder="请输入您的姓名" v-model="input2">
-            </el-input>
-          </el-form-item>
-          <el-form-item label="状态">
-            <el-select v-model="value" placeholder="请选择">
-              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-              </el-option>
-            </el-select>
-          </el-form-item>
-          <el-form-item label="审核人">
-            <el-select v-model="value1" placeholder="请选择">
-              <el-option v-for="item in options1" :key="item.value1" :label="item.label" :value="item.value1">
-              </el-option>
-            </el-select>
-          </el-form-item>
-          <el-form-item label="申请目标">
-            <el-select v-model="value2" placeholder="请选择">
-              <el-option v-for="item in options2" :key="item.value2" :label="item.label" :value="item.value2">
-              </el-option>
-            </el-select>
-          </el-form-item>
-          <el-button type="primary">查询</el-button>
-        </div>
-
-      </el-form>
-    </div>
+          </div>
+        </el-col>
+      </el-row>
+      <el-form-item label="账号">
+        <el-input size="small2" placeholder="请输入您的账号" v-model="input1">
+        </el-input>
+      </el-form-item>
+      <el-form-item label="姓名">
+        <el-input size="small2" placeholder="请输入您的姓名" v-model="input2">
+        </el-input>
+      </el-form-item>
+      <el-form-item label="状态">
+        <el-select v-model="value" placeholder="请选择">
+          <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="审核人">
+        <el-select v-model="value1" placeholder="请选择">
+          <el-option v-for="item in options1" :key="item.value1" :label="item.label" :value="item.value1">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="申请目标">
+        <el-select v-model="value2" placeholder="请选择">
+          <el-option v-for="item in options2" :key="item.value2" :label="item.label" :value="item.value2">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-button type="primary">查询</el-button>
+    </el-form>
     <!-- 数据表格 -->
     <el-table :data="tableData" border style="width: 100%" :stripe='true'>
       <el-table-column align='center' prop="num" label="序号" min-width="60">
@@ -71,7 +65,6 @@
       </el-table-column>
       <el-table-column align='center' prop="excuse" label="申请理由" min-width="100">
         <template scope="scope">
-
           <el-button type="text" @click="dialogTableVisible = true">查看</el-button>
           <!-- 申请代理人/代理商弹窗 -->
           <el-dialog title="申请代理人/代理商" :visible.sync="dialogTableVisible" :before-close="ai_dialog_close" size='tiny' top=7% custom-class='dialog_top'>
@@ -87,7 +80,6 @@
               </li>
             </ul>
           </el-dialog>
-          
         </template>
       </el-table-column>
       <el-table-column align='center' prop="datas" label="审核日期" min-width="100">
@@ -123,7 +115,6 @@
       </el-table-column>
 
     </el-table>
-
   </div>
 </template>
 
@@ -227,17 +218,12 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 20px 20px;
+  margin: 70px 20px;
+  width: 1100px;
 }
 
-.bg-purple[data-v-677f443f],
-.bg-purple-light[data-v-677f443f] {
-  background: none;
-}
-
-.query .choose .el-select {
+.el-select {
   width: 100px;
-  margin-right: 20px;
 }
 
 .el-input--small2 {
@@ -275,12 +261,7 @@ li:nth-of-type(7)>img {
   margin-left: 60px;
 }
 
-
-
-
-/* 默认的样式 */
-
 .el-row {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 </style>

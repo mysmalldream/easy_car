@@ -331,11 +331,11 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 10px 20px;
+  margin: 70px 20px;
 }
 
 .el-row {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .refuse .dialog-footer {

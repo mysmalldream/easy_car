@@ -7,7 +7,7 @@
         <div class="grid-content bg-purple">
           <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
             <el-form-item label="旧 密 码" prop="oldPassword" :rules="[
-              { required: true, message: '旧密码不能为空'},]">
+                { required: true, message: '旧密码不能为空'},]">
               <el-input type="password" v-model="ruleForm2.oldPassword" auto-complete="off"></el-input>
             </el-form-item>
             <el-form-item label="新 密 码" prop="pass">
@@ -93,17 +93,20 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 20px 20px;
+  margin: 70px 20px;
 }
-form{
+
+form {
   margin-top: 30px;
 }
+
 p {
   border-bottom: 1px solid #E3E3E3;
   padding-bottom: 5px;
   font-size: 18px;
 }
-.el-button--primary{
+
+.el-button--primary {
   margin-left: 100px;
   margin-right: 100px;
 }

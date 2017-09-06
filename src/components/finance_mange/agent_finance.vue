@@ -2,28 +2,22 @@
   <div id="hello">
     <!-- 代理人财务 -->
     <!-- 查询 -->
-    <div class="query">
-      <el-form :inline="true" action="">
-        <el-row :gutter="20">
+    <el-form :inline="true" class="demo-form-inline">
+      <el-row :gutter="10">
         <el-col :span="5">
-          <div class="grid-content bg-purple">
-            <label>账号:
-              <el-input size="small2" placeholder="请输入您的账号" v-model="input1">
-              </el-input>
-            </label>
-          </div>
+          <el-form-item label="账号:">
+            <el-input placeholder="请输入您的账号"></el-input>
+          </el-form-item>
         </el-col>
         <el-col :span="5">
-          <div class="grid-content bg-purple">
-            <label>姓名:
-              <el-input size="small2" placeholder="请输入您的姓名" v-model="input2">
-              </el-input>
-            </label>
-          </div>
+          <el-form-item label="姓名:">
+            <el-input type="text" v-model="input2" placeholder="请输入您的姓名"></el-input>
+          </el-form-item>
+          </label>
         </el-col>
-        </el-row>
-      </el-form>
-    </div>
+        <el-button type="primary">查询</el-button>
+      </el-row>
+    </el-form>
     <!-- 数据表格 -->
     <el-table :data="tableData" border style="width: 100%" :stripe='true'>
       <el-table-column align='center' prop="num" label="序号" min-width="50">
@@ -88,19 +82,19 @@ export default {
 <style scoped>
 /* 自定义的样式 */
 
-.query {
-  padding: 0px 20px 20px 20px;
+#hello {
+  margin: 70px 20px;
 }
 
 .el-input {
   width: 130px;
 }
 
-#hello {
-  margin: 20px 20px;
-
+.el-row {
+  margin-bottom: -10px;
 }
 
-/* 默认的样式 */
-
+.el-select {
+  width: 110px;
+}
 </style>

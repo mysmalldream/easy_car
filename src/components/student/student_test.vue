@@ -2,54 +2,50 @@
   <div id="hello">
     <!-- 约考记录 -->
     <!-- 查询 -->
-    <div class="query">
-      <el-form action="">
-        <el-row>
-          <el-col :span="12">
-            <div class="grid-content bg-purple">
-              <div class="block">
-                <span class="demonstration">考试时间:</span>
-                <el-date-picker v-model="value3" type="date" placeholder="考试日期" :picker-options="pickerOptions0">
-                </el-date-picker>------
-                <el-time-picker v-model="value4" :picker-options="{
-                selectableRange: '00:00:00 - 23:00:00'
-              }" placeholder="考试时间">
-                </el-time-picker>
-              </div>
+    <el-form action="" :inline="true">
+      <el-row>
+        <el-col :span="12">
+          <div class="grid-content bg-purple">
+            <div class="block">
+              <span class="demonstration">考试时间:</span>
+              <el-date-picker v-model="value3" type="date" placeholder="考试日期" :picker-options="pickerOptions0">
+              </el-date-picker>------
+              <el-time-picker v-model="value4" :picker-options="{
+                  selectableRange: '00:00:00 - 23:00:00'
+                }" placeholder="考试时间">
+              </el-time-picker>
             </div>
-          </el-col>
-        </el-row>
-
-        <div class="choose">
-          <label>预约人:
-            <el-input type="text" v-model="input1" placeholder="请输入您的姓名"></el-input>
-          </label>
-          <label>电话:
-            <el-input type="text" v-model="input2" placeholder="请输入您的电话"></el-input>
-          </label>
-          <label>状态:
-            <el-select v-model="value" placeholder="请选择">
-              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-              </el-option>
-            </el-select>
-          </label>
-          <label>科目:
-            <el-select v-model="value1" placeholder="请选择">
-              <el-option v-for="item in options1" :key="item.value1" :label="item.label" :value="item.value1">
-              </el-option>
-            </el-select>
-          </label>
-          <label>支付方式:
-            <el-select v-model="value2" placeholder="请选择">
-              <el-option v-for="item in options2" :key="item.value1" :label="item.label" :value="item.value1">
-              </el-option>
-            </el-select>
-          </label>
-          <el-button @click="onSubmit" type="primary">查询</el-button>
-        </div>
-
-      </el-form>
-    </div>
+          </div>
+        </el-col>
+      </el-row>
+      <div class="choose">
+        <label>预约人:
+          <el-input type="text" v-model="input1" placeholder="请输入您的姓名"></el-input>
+        </label>
+        <label>电话:
+          <el-input type="text" v-model="input2" placeholder="请输入您的电话"></el-input>
+        </label>
+        <label>状态:
+          <el-select v-model="value" placeholder="请选择">
+            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+            </el-option>
+          </el-select>
+        </label>
+        <label>科目:
+          <el-select v-model="value1" placeholder="请选择">
+            <el-option v-for="item in options1" :key="item.value1" :label="item.label" :value="item.value1">
+            </el-option>
+          </el-select>
+        </label>
+        <label>支付方式:
+          <el-select v-model="value2" placeholder="请选择">
+            <el-option v-for="item in options2" :key="item.value1" :label="item.label" :value="item.value1">
+            </el-option>
+          </el-select>
+        </label>
+        <el-button @click="onSubmit" type="primary">查询</el-button>
+      </div>
+    </el-form>
     <!-- 数据表格 -->
     <el-table :data="tableData" border style="width: 100%" :stripe='true'>
       <el-table-column fixed='left' align='center' prop="num" label="序号" min-width="70">
@@ -183,34 +179,19 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 20px 20px;
+  margin: 70px 20px;
   width: 1100px !important;
 }
 
-.bg-purple[data-v-677f443f],
-.bg-purple-light[data-v-677f443f] {
-  background: none;
-}
-
-.block,
-.bg-purple[data-v-55a5009d] {
-  background-color: #fff;
-}
-
 .el-table--fit {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
-/* .query .el-row {
-  width: 1010px !important;
-} */
-
-.query .choose .el-select {
+.el-select {
   width: 100px;
-  margin-right: 20px;
 }
 
-.query .choose .el-button {
+.choose .el-button {
   margin-left: 25px;
 }
 
@@ -218,24 +199,11 @@ export default {
   width: 150px;
 }
 
-.el-date-editor.el-input {
-  width: 120px;
-}
-
-.el-table {
-  width: 200% !important;
-}
-
 .el-button+.el-button {
   margin-left: 0px;
 }
 
-
-
-/* 默认的样式 */
-
 .el-row {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
-
 </style>
