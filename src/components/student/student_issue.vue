@@ -5,34 +5,35 @@
       <el-tab-pane label="科目一" name="first">
         <!-- 查询 -->
         <div class="query">
-          <el-form action="">
+          <el-form action="" :inline="true">
             <el-row>
               <el-col :span="7">
                 <div class="grid-content bg-purple">
                   <div class="block">
-                    <span class="demonstration">考试日期:</span>
+                   <el-form-item label="考试日期:">
                     <el-date-picker v-model="value6" type="daterange" placeholder="请选择考试日期范围">
                     </el-date-picker>
+                    </el-form-item>
                   </div>
                 </div>
               </el-col>
-              <label>状态:
+              <el-form-item label="状态:">
                 <el-select v-model="value" placeholder="请选择">
                   <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
                   </el-option>
                 </el-select>
-              </label>
+              </el-form-item>
             </el-row>
             <div class="choose">
-              <label>招录总数:
+              <el-form-item label="招录总数:">
                 <el-input type="text" v-model="input1" placeholder="请输入招录总数"></el-input>
-              </label>
-              <label>预约人数:
+              </el-form-item>
+              <el-form-item label="预约人数:">
                 <el-input type="text" v-model="input2" placeholder="请输入预约人数"></el-input>
-              </label>
-              <label>通关人数:
+              </el-form-item>
+              <el-form-item label="通关人数:">
                 <el-input type="text" v-model="input3" placeholder="请输入通关人数"></el-input>
-              </label>
+              </el-form-item>
               <el-button @click='query_button' type="primary">查询</el-button>
             </div>
           </el-form>
@@ -408,8 +409,7 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 60px 0px;
-  margin-left: 20px;
+  margin: 60px 20px;
   width: 1080px;
 }
 
@@ -421,13 +421,9 @@ export default {
   margin-left: 25px;
 }
 
-.el-row {
-  margin-top: 0px !important;
+.query .el-row {
+  margin-top: 0px;
   margin-bottom: 5px;
-}
-
-.el-form--inline .el-form-item__label {
-  width: 0px;
 }
 
 .el-dialog__body {

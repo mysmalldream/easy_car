@@ -8,11 +8,12 @@
           <el-col :span="8">
             <div class="grid-content bg-purple">
               <div class="block">
-                <span class="demonstration">消费时间:</span>
-                <el-date-picker v-model="value3" type="date" placeholder="消费日期">
-                </el-date-picker> ---
-                <el-time-picker v-model="value4" :picker-options="{selectableRange: '00:00:00 - 23:00:00'}" placeholder="消费时间">
-                </el-time-picker>
+                <el-form-item label="消费时间:">
+                  <el-date-picker v-model="value3" type="date" placeholder="消费日期">
+                  </el-date-picker> ---
+                  <el-time-picker v-model="value4" :picker-options="{selectableRange: '00:00:00 - 23:00:00'}" placeholder="消费时间">
+                  </el-time-picker>
+                </el-form-item>
               </div>
             </div>
           </el-col>
@@ -89,7 +90,8 @@ export default {
 .el-date-editor.el-input {
   width: 120px;
 }
-.el-row{
+
+.el-row {
   margin-bottom: -15px;
 }
 </style>

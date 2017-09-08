@@ -4,7 +4,7 @@
     <!-- 查询 -->
     <el-form :inline="true" action="">
       <el-row :gutter="1">
-        <el-col :span="5">
+        <el-col :span="6">
           <div class="grid-content bg-purple">
             <el-form-item label="账号:">
               <el-input size="small2" placeholder="请输入您的账号" v-model="input1">
@@ -12,7 +12,7 @@
             </el-form-item>
           </div>
         </el-col>
-        <el-col :span="5">
+        <el-col :span="6">
           <div class="grid-content bg-purple">
             <el-form-item label="姓名:">
               <el-input size="small2" placeholder="请输入您的姓名" v-model="input2">
@@ -116,10 +116,6 @@ export default {
 
 #hello {
   margin: 70px 20px;
-}
-
-.el-input {
-  width: 130px;
 }
 
 .el-row {

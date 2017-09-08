@@ -6,23 +6,24 @@
         <!-- 查询 -->
         <el-form action="" :inline="true">
           <el-row>
-            <el-col :span="7">
+            <el-col :span="8">
               <div class="grid-content bg-purple">
                 <div class="block">
-                  <span class="demonstration">反馈时间:</span>
-                  <el-date-picker v-model="value3" type="date" placeholder="反馈日期" :picker-options="pickerOptions0">
-                  </el-date-picker> ---
-                  <el-time-picker v-model="value4" :picker-options="{selectableRange: '00:00:00 - 23:00:00'}" placeholder="反馈时间">
-                  </el-time-picker>
+                  <el-form-item label="反馈时间:">
+                    <el-date-picker v-model="value3" type="date" placeholder="反馈日期" :picker-options="pickerOptions0">
+                    </el-date-picker> ---
+                    <el-time-picker v-model="value4" :picker-options="{selectableRange: '00:00:00 - 23:00:00'}" placeholder="反馈时间">
+                    </el-time-picker>
+                  </el-form-item>
                 </div>
               </div>
             </el-col>
-            <label>状态:
+            <el-form-item label="状态:">
               <el-select v-model="value" placeholder="请选择">
                 <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
-            </label>
+            </el-form-item>
             <el-form-item label="账号:">
               <el-input type="text" v-model="input1" placeholder="请输入您的账号"></el-input>
             </el-form-item>
@@ -191,15 +192,12 @@ export default {
 }
 
 .el-input {
-  width: 120px;
+  width: 130px;
 }
 
 .el-select {
   width: 100px;
 }
 
-.el-row {
-  margin-bottom: -10px;
-}
 </style>
 

@@ -3,11 +3,11 @@
     <!-- 场地管理 -->
     <!-- 查询 -->
     <div class="query">
-      <el-form action="">
+      <el-form action="" :inline="true">
         <div class="choose">
-          <label>场地名称:
+          <el-form-item label="场地名称:">
             <el-input type="text" v-model="input3" placeholder="请输入场地名称"></el-input>
-          </label>
+          </el-form-item>
           <el-button @click='query_button' type="primary">查询</el-button>
         </div>
 
@@ -15,25 +15,36 @@
       <!-- 表格 -->
       <el-row :gutter="20">
         <el-col :span="4" :offset="20">
-          <div class="">
             <el-button type="primary" @click="dialogFormVisible = true">添加</el-button>
             <el-button type="primary" icon="delete" :disabled="selected.length == 0" @click="del_all()">删除</el-button>
-          </div>
         </el-col>
       </el-row>
       <!-- 添加/修改弹窗-->
-      <el-dialog title="添加/修改" :visible.sync="dialogFormVisible" :show-close=true :before-close="ai_dialog_close1" custom-class='dialog_top'>
+      <el-dialog title="添加/修改" :visible.sync="dialogFormVisible" :show-close=true :before-close="ai_dialog_close1" custom-class='dialog_top' :lock-scroll=false top='8%'>
         <div class="refuse">
-          <el-form :model="form">
+          <el-form :model="form" :inline="true">
             <el-form-item label="场地名称 :" :label-width="formLabelWidth">
               <el-input v-model="form.name" auto-complete="off"></el-input>
             </el-form-item>
             <el-form-item label="宣 传 语 :" :label-width="formLabelWidth">
               <el-input v-model="form.xuanchuan" auto-complete="off"></el-input>
             </el-form-item>
-            <el-form-item label=" 地 址  :" :label-width="formLabelWidth">
-              <el-button>坐标获取</el-button>
+            <el-form-item label="联系方式 :" :label-width="formLabelWidth">
+              <el-input v-model="form.contact" auto-complete="off"></el-input>
             </el-form-item>
+            <el-form-item label=" 地 址 :" :label-width="formLabelWidth">
+              <el-input v-model="form.address" auto-complete="off"></el-input>
+            </el-form-item>
+            <div class="map">
+              <div>
+                <b>详细地址:</b>{{ dragData.address }}</div>
+              <span>
+                <b>经度：</b>{{ dragData.lng }}
+                <b>纬度：</b>{{ dragData.lat }}</span>
+            </div>
+            <div class="m-part">
+              <mapDrag @drag="dragMap" class="mapbox"></mapDrag>
+            </div>
           </el-form>
           <div slot="footer" class="dialog-footer" custom-class="aaa">
             <el-button @click="dialogFormVisible = false">取 消</el-button>
@@ -41,7 +52,7 @@
           </div>
         </div>
       </el-dialog>
-
+      <!-- 表格数据 -->
       <el-table ref="multipleTable" :data="tableData3" border tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55">
         </el-table-column>
@@ -64,9 +75,7 @@
           </span>
         </el-table-column>
       </el-table>
-
     </div>
-
   </div>
 </template>
 
@@ -74,13 +83,22 @@
 import Vue from 'vue'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+import mapDrag from '../../common/mapDrag'
 
 Vue.use(Element)
 
 export default {
   name: 'hello',
+  components: {    //地图
+    mapDrag
+  },
   data() {
     return {
+      dragData: {   //地图
+        lng: null,
+        lat: null,
+        address: null,
+      },
       dialogTableVisible: false,     //查看弹出框
       dialogFormVisible: false,
       formLabelWidth: '80px',
@@ -88,6 +106,8 @@ export default {
       form: {
         name: '',
         xuanchuan: '',
+        contact: '',
+        address: '',
       },
       tableData3: [{
         area_name: '易学车驾校',
@@ -164,6 +184,14 @@ export default {
     this.getUsers();
   },
   methods: {
+    dragMap(data) {   //地图
+      // console.log(data)
+      this.dragData = {
+        lng: data.position.lng,
+        lat: data.position.lat,
+        address: data.address,
+      }
+    },
     ai_dialog_close1() {
       this.dialogFormVisible = false;   //添加修改弹出框
     },
@@ -380,10 +408,11 @@ export default {
 
 #hello {
   margin: 70px 20px;
+  width: 1069px;
 }
 
 .choose .el-input {
-  width: 150px;
+  width: 170px;
 }
 
 .query .choose .el-button {
@@ -394,8 +423,8 @@ export default {
   margin-bottom: 5px;
 }
 
-.refuse .dialog-footer {
-  margin-top: 30px !important;
+.el-form-item {
+  margin-bottom: 10px;
 }
 
 .refuse .dialog-footer .el-button--default {
@@ -404,6 +433,23 @@ export default {
 
 .refuse .dialog-footer .el-button--primary {
   margin-left: 180px;
+}
+
+
+/* 地图的样式 */
+
+.map {
+  width: 100%;
+  height: 38px;
+  border: 1px solid #ccc;
+}
+
+.m-part .mapbox {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 10px;
+  float: left;
 }
 </style>
 

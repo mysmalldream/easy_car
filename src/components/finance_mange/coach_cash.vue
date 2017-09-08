@@ -4,31 +4,31 @@
     <!-- 查询 -->
     <div class="query">
       <el-form :inline="true" action="">
-        <el-col :span="5">
+        <el-col :span="6">
           <div class="grid-content bg-purple">
-            <label>账号:
+            <el-form-item label="账号">
               <el-input size="small2" placeholder="请输入您的账号" v-model="input1">
               </el-input>
-            </label>
+            </el-form-item>
           </div>
         </el-col>
-        <el-col :span="5">
+        <el-col :span="6">
           <div class="grid-content bg-purple">
-            <label>姓名:
+            <el-form-item label="姓名">
               <el-input size="small2" placeholder="请输入您的姓名" v-model="input2">
               </el-input>
-            </label>
+            </el-form-item>
           </div>
         </el-col>
 
         <div class="choose">
           <el-col :span="5">
-            <label>级别:
+            <el-form-item label="级别">
               <el-select v-model="value" placeholder="请选择">
                 <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
-            </label>
+            </el-form-item>
           </el-col>
         </div>
 
@@ -119,10 +119,6 @@ export default {
 
 .query {
   padding: 50px 20px 50px 20px;
-}
-
-.el-input {
-  width: 160px;
 }
 
 #hello {

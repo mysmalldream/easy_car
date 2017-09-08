@@ -391,6 +391,7 @@ export default {
 
 #hello {
     margin: 55px 20px;
+    width: 1068px;
 }
 
 .el-row {

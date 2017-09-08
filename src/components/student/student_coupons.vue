@@ -15,27 +15,26 @@
           姓名：薛宝钗
         </span>
       </div>
-      <el-form action="">
+      <el-form action="" :inline="true">
         <el-col :span="8">
           <div class="grid-content bg-purple">
             <div class="block">
-              <span class="demonstration">使用日期:</span>
-              <el-date-picker v-model="value6" type="daterange" placeholder="请选择注册日期范围">
-              </el-date-picker>
+              <el-form-item label="使用日期:">
+                <el-date-picker v-model="value6" type="daterange" placeholder="请选择注册日期范围">
+                </el-date-picker>
+              </el-form-item>
             </div>
           </div>
         </el-col>
-
         <div class="choose">
-          <label>状态:
+          <el-form-item label="状态:">
             <el-select v-model="value" placeholder="请选择">
               <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
               </el-option>
             </el-select>
-          </label>
+          </el-form-item>
           <el-button @click="query" type="primary">查询</el-button>
         </div>
-
       </el-form>
     </div>
     <!-- 数据表格 -->
@@ -47,7 +46,6 @@
       <el-table-column align='center' prop="date" label="使用时间" min-width="70">
       </el-table-column>
     </el-table>
-
   </div>
 </template>
 
@@ -110,8 +108,8 @@ export default {
 /* 自定义的样式 */
 
 .query {
-  padding: 20px 0px 10px 0px;
-  width: 900px;
+  padding: 20px 0px 0px 0px;
+  width: 1000px;
 }
 
 #hello {
@@ -123,7 +121,7 @@ export default {
 }
 
 .query .account {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #ccc;
   margin-bottom: 20px;
   padding: 10px;
   font-size: 16px;
@@ -132,5 +130,4 @@ export default {
 .query .account span {
   margin-right: 70px;
 }
-
 </style>

@@ -2,49 +2,48 @@
   <div id="hello">
     <!-- 订单管理 -->
     <!-- 查询 -->
-    <div class="query">
-      <el-form action="">
-        <el-row>
-          <el-col :span="20">
-            <div class="grid-content bg-purple">
-              <div class="block">
-                <span class="demonstration">预约时间:</span>
+    <el-form action="" :inline="true">
+      <el-row :gutter="20">
+        <el-col :span="18">
+          <div class="grid-content bg-purple">
+            <div class="block">
+              <el-form-item label="预约时间:">
                 <el-date-picker v-model="value3" type="date" placeholder="预约时间" :picker-options="pickerOptions0">
-                </el-date-picker>------
+                </el-date-picker> ---
                 <el-time-picker v-model="value4" :picker-options="{
-                            selectableRange: '00:00:00 - 23:00:00'
-                          }" placeholder="考试时间">
+                                selectableRange: '00:00:00 - 23:00:00'
+                              }" placeholder="考试时间">
                 </el-time-picker>
-                <span class="demonstration">接单时间:</span>
+              </el-form-item>
+              <el-form-item label="接单时间:">
                 <el-date-picker v-model="value5" type="date" placeholder="接单时间" :picker-options="pickerOptions0">
-                </el-date-picker>------
+                </el-date-picker> ---
                 <el-time-picker v-model="value7" :picker-options="{
-                            selectableRange: '00:00:00 - 23:00:00'
-                          }" placeholder="考试时间">
+                                selectableRange: '00:00:00 - 23:00:00'
+                              }" placeholder="考试时间">
                 </el-time-picker>
-              </div>
+              </el-form-item>
             </div>
-          </el-col>
-        </el-row>
+          </div>
+        </el-col>
+      </el-row>
 
-        <div class="choose">
-          <label>状态:
-            <el-select v-model="value" placeholder="请选择">
-              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-              </el-option>
-            </el-select>
-          </label>
-          <label>教练:
-            <el-input type="text" v-model="input1" placeholder="请输入您的姓名"></el-input>
-          </label>
-          <label>学员:
-            <el-input type="text" v-model="input2" placeholder="请输入您的电话"></el-input>
-          </label>
-          <el-button @click="onSubmit" type="primary">查询</el-button>
-        </div>
-
-      </el-form>
-    </div>
+      <div class="choose">
+        <el-form-item label="状态:">
+          <el-select v-model="value" placeholder="请选择">
+            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="教练:">
+          <el-input type="text" v-model="input1" placeholder="请输入您的姓名"></el-input>
+        </el-form-item>
+        <el-form-item label="学员:">
+          <el-input type="text" v-model="input2" placeholder="请输入您的电话"></el-input>
+        </el-form-item>
+        <el-button @click="onSubmit" type="primary">查询</el-button>
+      </div>
+    </el-form>
     <!-- 数据表格 -->
     <el-table :data="tableData" border style="width: 100%" :stripe='true'>
       <el-table-column fixed='left' align='center' prop="num" label="序号" min-width="70">
@@ -173,18 +172,14 @@ export default {
 
 #hello {
   margin: 70px 20px;
+  width: 1069px;
 }
-
-.el-table--fit {
-  margin-top: 20px;
-}
-
-.query .choose .el-select {
+.choose .el-select {
   width: 100px;
   margin-right: 20px;
 }
 
-.query .choose .el-button {
+.choose .el-button {
   margin-left: 25px;
 }
 
@@ -200,11 +195,4 @@ export default {
   margin-left: 0px;
 }
 
-
-
-/* 默认的样式 */
-
-.el-row {
-  margin-bottom: 20px;
-}
 </style>

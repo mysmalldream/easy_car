@@ -14,6 +14,8 @@ import 'element-ui/lib/theme-default/index.css'
 Vue.use(Element)
 Vue.use(VueRouter)
 Vue.use(VueResource)
+// headers('content-type','application/json')
+// Vue.http.emulateJSON = true;
 
 //定义路由
 // const router = new VueRouter({
@@ -61,13 +63,11 @@ import psw_reset from "./components/system_setting/psw_reset.vue";//密码重置
 
 
 
-
-
 // 定义路由规则(实例化路由规则对象)
 const router = new VueRouter({
   // routes: routeConfig,
   routes:[
-    { path: "/", redirect: '/login' }, //默认显示登录界面, redirect: '/login'
+    { path: "/", redirect: '/login' }, //默认显示登录界面
     { path: "/login", component:login }, //登录界面
     { path: "/student_message", component:student_message }, //学员信息概览
     { path: "/student_manage", component:student_manage }, //审核管理
@@ -105,7 +105,6 @@ const router = new VueRouter({
     { path: "/system_message", component:system_message }, //系统消息列表
     { path: "/user_manage", component:user_manage }, //用户管理
     { path: "/psw_reset", component:psw_reset }, //密码重置
-    
     
   ]
 })

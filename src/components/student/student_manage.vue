@@ -7,18 +7,20 @@
         <el-col :span="7">
           <div class="grid-content bg-purple">
             <div class="block">
-              <span class="demonstration">申请日期:</span>
-              <el-date-picker v-model="value6" type="daterange" placeholder="请选择申请日期范围">
-              </el-date-picker>
+              <el-form-item label="申请日期:">
+                <el-date-picker v-model="value6" type="daterange" placeholder="请选择申请日期范围">
+                </el-date-picker>
+              </el-form-item>
             </div>
           </div>
         </el-col>
         <el-col :span="7">
           <div class="grid-content bg-purple-light">
             <div class="block">
-              <span class="demonstration">审核日期:</span>
-              <el-date-picker v-model="value7" type="daterange" placeholder="请选择审核日期范围">
-              </el-date-picker>
+              <el-form-item label="审核日期:">
+                <el-date-picker v-model="value7" type="daterange" placeholder="请选择审核日期范围">
+                </el-date-picker>
+              </el-form-item>
             </div>
           </div>
         </el-col>
@@ -259,9 +261,5 @@ li:nth-of-type(7)>img {
 
 .refuse .dialog-footer .el-button--primary {
   margin-left: 60px;
-}
-
-.el-row {
-  margin-bottom: 5px;
 }
 </style>

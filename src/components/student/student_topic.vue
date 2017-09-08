@@ -77,8 +77,8 @@ export default {
 /* 自定义的样式 */
 
 #hello {
-  margin: 0px 20px;
-  margin-top:60px;
+  margin: 60px 20px;
+  width: 1069px;
 }
 .el-tabs{
   width:1100px;

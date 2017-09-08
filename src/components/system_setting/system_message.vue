@@ -3,37 +3,36 @@
     <!-- 系统消息列表 -->
     <!-- 查询 -->
     <div class="query">
-      <el-form action="">
+      <el-form action="" :inline="true">
         <el-row>
-          <el-col :span="12">
+          <el-col :span="8">
             <div class="grid-content bg-purple">
               <div class="block">
-                <span class="demonstration">发送时间:</span>
-                <el-date-picker v-model="value3" type="date" placeholder="发送日期">
-                </el-date-picker> -----
-                <el-time-picker v-model="value4" :picker-options="{selectableRange: '00:00:00 - 23:00:00'}" placeholder="发送时间">
-                </el-time-picker>
+                <el-form-item label="发送时间:">
+                  <el-date-picker v-model="value3" type="date" placeholder="发送日期">
+                  </el-date-picker> ---
+                  <el-time-picker v-model="value4" :picker-options="{selectableRange: '00:00:00 - 23:00:00'}" placeholder="发送时间">
+                  </el-time-picker>
+                </el-form-item>
               </div>
             </div>
           </el-col>
         </el-row>
         <div class="choose">
-          <el-form>
-            <label>标题:
-              <el-input type="text" v-model="input1" placeholder="请输入您的姓名"></el-input>
-            </label>
-            <label>接收对象:
-              <el-select v-model="value" placeholder="请选择">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </label>
-            <label>发送人:
-              <el-input type="text" v-model="input2" placeholder="请输入您的电话"></el-input>
-            </label>
-            <el-button @click="onSubmit" type="primary">查询</el-button>
-            <el-button type="success" @click="dialogCreateVisible = true">发送新消息</el-button>
-          </el-form>
+          <el-form-item label="姓名">
+            <el-input type="text" v-model="input1" placeholder="请输入您的姓名"></el-input>
+          </el-form-item>
+          <el-form-item label="接收对象">
+            <el-select v-model="value" placeholder="请选择">
+              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              </el-option>
+            </el-select>
+          </el-form-item>
+          <el-form-item label="电话">
+            <el-input type="text" v-model="input2" placeholder="请输入您的电话"></el-input>
+          </el-form-item>
+          <el-button @click="onSubmit" type="primary">查询</el-button>
+          <el-button type="success" @click="dialogCreateVisible = true">发送新消息</el-button>
           <!-- 发送新消息弹窗-->
           <el-dialog title="新消息" v-model="dialogCreateVisible" :close-on-click-modal="false" :close-on-press-escape="false" top=15% size='mini' custom-class='dialog_top'>
             <div class="refuse">
@@ -205,56 +204,51 @@ export default {
 <style scoped>
 /* 自定义的样式 */
 
-  #hello {
-    margin: 70px 20px;
-  }
-  .el-dialog__title{
-    text-align: center !important;
-    background-color: blue;
-    padding-bottom: 10px;
-  }
-  .el-table--fit {
-    margin-top: 20px;
-  }
+#hello {
+  margin: 70px 20px;
+}
 
-  .query .choose .el-select {
-    width: 120px;
-    margin-right: 20px;
-  }
+.el-dialog__title {
+  text-align: center !important;
+  background-color: blue;
+  padding-bottom: 10px;
+}
 
-  .query .choose .el-button {
-    margin-left: 25px;
-  }
+.el-table--fit {
+  margin-top: -10px;
+}
 
-  .choose .el-form .el-input {
-    width: 150px;
-  }
+.query .choose .el-select {
+  width: 120px;
+  margin-right: 20px;
+}
 
-  .popup {
-    width: 460px !important;
-  }
+.query .choose .el-button {
+  margin-left: 25px;
+}
 
-  .el-date-editor.el-input {
-    width: 120px;
-  }
+.choose .el-form .el-input {
+  width: 150px;
+}
 
-  .el-button+.el-button {
-    margin-left: 0px;
-  }
+.popup {
+  width: 460px !important;
+}
 
-  .refuse .dialog-footer {
-    margin-top: 0px !important;
-  }
+.el-date-editor.el-input {
+  width: 120px;
+}
 
-  .refuse .dialog-footer .el-button--primary {
-    margin-left: 225px;
-  }
+.el-button+.el-button {
+  margin-left: 0px;
+}
 
+.refuse .dialog-footer {
+  margin-top: 0px !important;
+}
 
+.refuse .dialog-footer .el-button--primary {
+  margin-left: 250px;
+}
 
-  /* 默认的样式 */
-
-  .el-row {
-    margin-bottom: 20px;
-  }
 </style>

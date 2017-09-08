@@ -3,13 +3,14 @@
     <!-- 代理详情-->
     <!-- 查询 -->
     <el-form action="" :inline="true">
-      <el-row :gutter="20">
-        <el-col :span="6">
+      <el-row :gutter="1">
+        <el-col :span="7">
           <div class="grid-content bg-purple">
             <div class="block">
-              <span class="demonstration">注册日期:</span>
-              <el-date-picker v-model="value6" type="daterange" placeholder="请选择注册日期范围">
-              </el-date-picker>
+              <el-form-item label="注册日期:">
+                <el-date-picker v-model="value6" type="daterange" placeholder="请选择注册日期范围">
+                </el-date-picker>
+              </el-form-item>
             </div>
           </div>
         </el-col>
@@ -112,9 +113,5 @@ export default {
 #hello {
   margin: 70px 20px;
   width: 1100px;
-}
-
-.el-input {
-  width: 180px;
 }
 </style>

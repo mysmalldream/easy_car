@@ -7,42 +7,43 @@
         <el-col :span="12">
           <div class="grid-content bg-purple">
             <div class="block">
-              <span class="demonstration">考试时间:</span>
-              <el-date-picker v-model="value3" type="date" placeholder="考试日期" :picker-options="pickerOptions0">
-              </el-date-picker>------
-              <el-time-picker v-model="value4" :picker-options="{
-                  selectableRange: '00:00:00 - 23:00:00'
-                }" placeholder="考试时间">
-              </el-time-picker>
+              <el-form-item label="考试时间:">
+                <el-date-picker v-model="value3" type="date" placeholder="考试日期" :picker-options="pickerOptions0">
+                </el-date-picker> ---
+                <el-time-picker v-model="value4" :picker-options="{
+                    selectableRange: '00:00:00 - 23:00:00'
+                  }" placeholder="考试时间">
+                </el-time-picker>
+              </el-form-item>
             </div>
           </div>
         </el-col>
       </el-row>
       <div class="choose">
-        <label>预约人:
+        <el-form-item label="预约人:">
           <el-input type="text" v-model="input1" placeholder="请输入您的姓名"></el-input>
-        </label>
-        <label>电话:
+        </el-form-item>
+        <el-form-item label="电话:">
           <el-input type="text" v-model="input2" placeholder="请输入您的电话"></el-input>
-        </label>
-        <label>状态:
+        </el-form-item>
+        <el-form-item label="状态:">
           <el-select v-model="value" placeholder="请选择">
             <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
             </el-option>
           </el-select>
-        </label>
-        <label>科目:
+        </el-form-item>
+        <el-form-item label="科目:">
           <el-select v-model="value1" placeholder="请选择">
             <el-option v-for="item in options1" :key="item.value1" :label="item.label" :value="item.value1">
             </el-option>
           </el-select>
-        </label>
-        <label>支付方式:
+        </el-form-item>
+        <el-form-item label="支付方式:">
           <el-select v-model="value2" placeholder="请选择">
             <el-option v-for="item in options2" :key="item.value1" :label="item.label" :value="item.value1">
             </el-option>
           </el-select>
-        </label>
+        </el-form-item>
         <el-button @click="onSubmit" type="primary">查询</el-button>
       </div>
     </el-form>
@@ -180,11 +181,7 @@ export default {
 
 #hello {
   margin: 70px 20px;
-  width: 1100px !important;
-}
-
-.el-table--fit {
-  margin-top: 10px;
+  width: 1069px;
 }
 
 .el-select {
@@ -201,9 +198,5 @@ export default {
 
 .el-button+.el-button {
   margin-left: 0px;
-}
-
-.el-row {
-  margin-bottom: 10px;
 }
 </style>

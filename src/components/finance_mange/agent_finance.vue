@@ -4,12 +4,12 @@
     <!-- 查询 -->
     <el-form :inline="true" class="demo-form-inline">
       <el-row :gutter="10">
-        <el-col :span="5">
+        <el-col :span="6">
           <el-form-item label="账号:">
             <el-input placeholder="请输入您的账号"></el-input>
           </el-form-item>
         </el-col>
-        <el-col :span="5">
+        <el-col :span="6">
           <el-form-item label="姓名:">
             <el-input type="text" v-model="input2" placeholder="请输入您的姓名"></el-input>
           </el-form-item>
@@ -86,9 +86,6 @@ export default {
   margin: 70px 20px;
 }
 
-.el-input {
-  width: 130px;
-}
 
 .el-row {
   margin-bottom: -10px;

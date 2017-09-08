@@ -56,8 +56,7 @@
                     </el-table-column>
                     <el-table-column prop="remark" align='center' label="备注" min-width="100" show-overflow-tooltip>
                     </el-table-column>
-
-                    <el-table-column inline-template align='center' label="操作" min-width="100">
+                    <el-table-column inline-template align='center' label="操作" min-width="110">
                         <span>
                             <el-button size="small">下线</el-button>
                             <el-button type="primary" size="small" @click="setCurrent(row)">修改</el-button>
@@ -402,6 +401,7 @@ export default {
 
 #hello {
     margin: 55px 20px;
+    width: 1069px;
 }
 
 .el-row {
@@ -424,9 +424,6 @@ img {
 .refuse .dialog-footer .el-button--primary {
     margin-left: 260px;
 }
-
-
-
 
 
 /* 表单上传图片的样式 */

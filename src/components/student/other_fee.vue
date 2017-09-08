@@ -3,24 +3,24 @@
     <!-- 其他费用-->
     <!-- 日期 -->
     <div class="query">
-      <el-form action="">
+      <el-form action="" :inline="true">
         <el-col :span="7">
           <div class="grid-content bg-purple">
             <div class="block">
-              <span class="demonstration">时间:</span>
-              <el-date-picker v-model="value6" type="daterange" placeholder="请选择时间日期范围">
-              </el-date-picker>
+              <el-form-item label="时间:">
+                <el-date-picker v-model="value6" type="daterange" placeholder="请选择时间日期范围">
+                </el-date-picker>
+              </el-form-item>
             </div>
           </div>
         </el-col>
-
         <div class="choose">
-          <label>来源:
+          <el-form-item label="来源:">
             <el-select v-model="value" placeholder="请选择">
               <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
               </el-option>
             </el-select>
-          </label>
+          </el-form-item>
           <el-button type="primary">查询</el-button>
         </div>
       </el-form>
@@ -36,7 +36,6 @@
       <el-table-column align='center' prop="fee" label="费用" min-width="70">
       </el-table-column>
     </el-table>
-
   </div>
 </template>
 
@@ -54,7 +53,6 @@ Vue.use(Element)
 export default {
   name: 'hello',
   created: function() {
-    // this.$router.push('/activePublic');
     //  this.$router.push('/student_details')  //将你的跳转写在这里。
   },
   created() {
@@ -97,7 +95,7 @@ export default {
 /* 自定义的样式 */
 
 .query {
-  padding: 50px 20px 10px 20px;
+  padding: 50px 20px 0px 20px;
   width: 1000px;
 }
 

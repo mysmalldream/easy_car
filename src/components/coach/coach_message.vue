@@ -6,38 +6,38 @@
       <el-form :inline="true" action="">
         <el-col :span="5">
           <div class="grid-content bg-purple">
-            <label>账号:
+            <el-form-item label="账号:">
               <el-input size="small2" placeholder="请输入您的账号" v-model="input1">
               </el-input>
-            </label>
+            </el-form-item>
           </div>
         </el-col>
         <el-col :span="5">
           <div class="grid-content bg-purple">
-            <label>姓名:
+            <el-form-item label="姓名:">
               <el-input size="small2" placeholder="请输入您的姓名" v-model="input2">
               </el-input>
-            </label>
+            </el-form-item>
           </div>
         </el-col>
 
         <div class="choose">
           <el-col :span="5">
-            <label>身份等级:
+            <el-form-item label="身份等级:">
               <el-select v-model="value" placeholder="请选择">
                 <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
-            </label>
+            </el-form-item>
           </el-col>
 
           <el-col :span="4">
-            <label>状态:
+            <el-form-item label="状态:">
               <el-select v-model="value1" placeholder="请选择">
                 <el-option v-for="item in options1" :key="item.value1" :label="item.label" :value="item.value1">
                 </el-option>
               </el-select>
-            </label>
+            </el-form-item>
           </el-col>
         </div>
 
@@ -171,11 +171,11 @@ export default {
 /* 自定义的样式 */
 
 .query {
-  padding: 50px 20px 50px 20px;
+  padding: 50px 20px 0px 20px;
 }
 
 .el-input {
-  width: 130px;
+  width: 150px;
 }
 
 #hello {

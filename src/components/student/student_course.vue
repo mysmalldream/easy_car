@@ -3,36 +3,37 @@
     <!-- 课程报名管理 -->
     <!-- 查询 -->
     <el-form action="" :inline="true">
-      <el-row :gutter="20">
-        <el-col :span="8">
+      <el-row :gutter="0">
+        <el-col :span="7">
           <div class="grid-content bg-purple">
             <div class="block">
-              <span class="demonstration">报名日期:</span>
-              <el-date-picker v-model="value6" type="daterange" placeholder="请选择报名日期范围">
-              </el-date-picker>
+              <el-form-item label="报名日期:">
+                <el-date-picker v-model="value6" type="daterange" placeholder="请选择报名日期范围">
+                </el-date-picker>
+              </el-form-item>
             </div>
           </div>
         </el-col>
+        <el-form-item label="姓名:">
+          <el-input type="text" v-model="input1" placeholder="请输入您的姓名"></el-input>
+        </el-form-item>
+        <el-form-item label="电话:">
+          <el-input type="text" v-model="input2" placeholder="请输入您的电话"></el-input>
+        </el-form-item>
+        <el-form-item label="代理商:">
+          <el-select v-model="value" placeholder="请选择">
+            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="报名套餐:">
+          <el-select v-model="value1" placeholder="请选择">
+            <el-option v-for="item in options1" :key="item.value1" :label="item.label" :value="item.value1">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-button @click="onSubmit" type="primary">查询</el-button>
       </el-row>
-      <el-form-item label="姓名:">
-        <el-input type="text" v-model="input1" placeholder="请输入您的姓名"></el-input>
-      </el-form-item>
-      <el-form-item label="电话:">
-        <el-input type="text" v-model="input2" placeholder="请输入您的电话"></el-input>
-      </el-form-item>
-      <el-form-item label="代理商:">
-        <el-select v-model="value" placeholder="请选择">
-          <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-          </el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="报名套餐:">
-        <el-select v-model="value1" placeholder="请选择">
-          <el-option v-for="item in options1" :key="item.value1" :label="item.label" :value="item.value1">
-          </el-option>
-        </el-select>
-      </el-form-item>
-      <el-button @click="onSubmit" type="primary">查询</el-button>
     </el-form>
     <!-- 数据表格 -->
     <el-table :data="tableData" border style="width: 100%" :stripe='true'>
@@ -152,18 +153,15 @@ export default {
 }
 
 .el-select {
-  width: 130px;
+  width: 90px;
 }
 
-.el-button {
-  margin-left: 20px;
-}
 
-.el-input {
+.block .el-input {
   width: 210px;
 }
 
-.el-row {
-  margin-bottom: 10px;
+.el-input {
+  width: 130px;
 }
 </style>

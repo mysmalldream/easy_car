@@ -9,7 +9,7 @@
         </el-col>
       </el-row>
       <!-- 新增/修改弹窗-->
-      <el-dialog title="新增/修改" :visible.sync="dialogFormVisible" :show-close=true :before-close="ai_dialog_close1" size='tiny' custom-class='dialog_top' >
+      <el-dialog title="新增/修改" :visible.sync="dialogFormVisible" :show-close=true :before-close="ai_dialog_close1" size='tiny' custom-class='dialog_top'>
         <div class="refuse">
           <el-form :model="form">
             <el-form-item label="主 题 :" :label-width="formLabelWidth">
@@ -21,9 +21,13 @@
             <el-form-item label="上 级 :" :label-width="formLabelWidth">
               <el-input v-model="form.top" auto-complete="off"></el-input>
             </el-form-item>
-            <el-form-item label="返佣比例 :" :label-width="formLabelWidth">
-              <el-input v-model="form.rate2" auto-complete="off"></el-input>
+            <el-form-item label="上 级 :" :label-width="formLabelWidth">
+              <el-select v-model="value" placeholder="请选择">
+                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+                </el-option>
+              </el-select>
             </el-form-item>
+
           </el-form>
           <div slot="footer" class="dialog-footer" custom-class="aaa">
             <el-button @click="dialogFormVisible = false">取 消</el-button>
@@ -34,8 +38,6 @@
       <!-- 表格 -->
       <el-table ref="multipleTable" :data="tableData3" border tooltip-effect="dark" style="width: 100%">
         <el-table-column prop="topic" align='center' label="主题" min-width="100">
-        </el-table-column>
-        <el-table-column prop="rate" align='center' label="返佣比例" min-width="100" show-overflow-tooltip>
         </el-table-column>
         <el-table-column prop="top" align='center' label="上级" min-width="100" show-overflow-tooltip>
         </el-table-column>
@@ -74,16 +76,13 @@ export default {
         topic: '',
         rate1: '',
         top: '',
-        rate2: '',
       },
       tableData3: [{
         topic: '一级教练',
-        rate: '40%',
         top: '',
         backmoney: '',
       }, {
         topic: '代理人',
-        rate: '8%',
         top: '代理商',
         backmoney: '2%',
       }],
@@ -91,20 +90,23 @@ export default {
       formInline: {
         user: '',
       },
+      options: [{
+        value: '选项1',
+        label: '黄金糕'
+      }, {
+        value: '选项2',
+        label: '双皮奶'
+      }, {
+        value: '选项3',
+        label: '蚵仔煎'
+      }],
+      value: '',
       value1: '',
       input1: '',
       input2: '',
       value6: '',
-      value: '',
       // getuuid :'',
       activeName: 'first',
-      options: [{
-        value: '选项1',
-        label: '未开始'
-      }, {
-        value: '选项2',
-        label: '结束'
-      }],
       url: 'http://172.10.0.201/api/v1/accounts', //此处填写接口地址
       users: [],
       keywords: '',
@@ -148,7 +150,7 @@ export default {
     this.getUsers();
   },
   methods: {
-    revise(){
+    revise() {
       console.log('修改按钮');
     },
     ai_dialog_close1() {
