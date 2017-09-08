@@ -76,9 +76,9 @@
               <li> 电话：13002918015</li>
               <li> 银行卡卡号：6217000000000000000000000000</li>
               <li> 身份证：610122199011111220</li>
-              <li> 正：<img src='../../../static/imgs/test.jpg'></img>
+              <li> 正：<img src='../../../static/img/test.jpg'></img>
               </li>
-              <li> 反：<img src='../../../static/imgs/test.jpg'></img>
+              <li> 反：<img src='../../../static/img/test.jpg'></img>
               </li>
             </ul>
           </el-dialog>

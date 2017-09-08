@@ -43,7 +43,7 @@ export default {
 			headerFixed: '',
 			user: {
 				name: "凌波微步",
-				icon: '../static/imgs/test.jpg'
+				icon: '../static/img/test.jpg'
 			},
 		};
 	},

@@ -16,14 +16,14 @@
               <el-input class="yanzhengma" type="text" v-model="ruleForm2.verify" auto-complete="off" style="width=100"></el-input>
               <span class="fresh">
                 <img class="imgs" :src="url" alt="">
-                <img class="pics" @click="clickPic" src="../../static/imgs/fresh.png" alt="">
+                <img class="pics" @click="clickPic" src="../../static/img/fresh.png" alt="">
               </span>
             </el-form-item>
             <el-form-item>
               <el-button type="primary" @click="submitForm('ruleForm2')">登录</el-button>
               <el-button @click="resetForm('ruleForm2')">重置</el-button>
             </el-form-item>
-          </el-form>
+          </el-form> 
         </div>
       </el-col>
     </el-row>
@@ -108,7 +108,8 @@ export default {
 /* 自定义的样式 */
 
 .login {
-  background-image: url('/static/imgs/login.png');
+  /* background-image: url('/static/img/login.png'); */
+  background-image: url('../assets/img/login.png');
   background-repeat: no-repeat;
   position: fixed;
   z-index: 1000000;

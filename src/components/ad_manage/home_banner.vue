@@ -88,21 +88,21 @@ export default {
             tableData3: [{
                 num: '1',
                 topic: '活动一',
-                image: '../../../static/imgs/card.png',
+                image: '../../../static/img/card.png',
                 urls: 'http://119.28.62.27:8080/ytr/app/banner',
                 status: '已上线',
                 remark: '这是备注信息'
             }, {
                 num: '2',
                 topic: '活动二',
-                image: '../../../static/imgs/test.jpg',
+                image: '../../../static/img/test.jpg',
                 urls: 'http://119.28.62.27:8080/ytr/app/banner',
                 status: '已上线',
                 remark: '这是备注信息'
             }, {
                 num: '3',
                 topic: '活动三',
-                image: '../../../static/imgs/test11.jpg',
+                image: '../../../static/img/test11.jpg',
                 urls: 'http://119.28.62.27:8080/ytr/app/banner',
                 status: '已上线',
                 remark: '这是备注信息'

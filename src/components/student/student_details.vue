@@ -32,7 +32,7 @@ export default {
       }, {
         name: '姓名：薛宝钗',
       }, {
-        head: '头像：<img src="../../../static/imgs/test.jpg"></img>',
+        head: '头像：<img src="../../../static/img/test.jpg"></img>',
       }, {
         area: '考场名称：xxx',
       }, {
@@ -40,9 +40,9 @@ export default {
       }, {
         idcard: '身份证：610122199011111220',
       }, {
-        front: '正：<img src="../../../static/imgs/card.png"></img>',
+        front: '正：<img src="../../../static/img/card.png"></img>',
       }, {
-        side: '反：<img src="../../../static/imgs/card.png"></img>',
+        side: '反：<img src="../../../static/img/card.png"></img>',
       }],
     }
   }
